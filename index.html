@@ -8,6 +8,7 @@
 <body>
   <h1>Some Name</h1>
   <h2>When are your friends most active?</h2>
+  <script src="js/facebookSDK.js"></script>
   <menu>
     <li><a href="listBooks.html"><button type="button">List all books</button></a></li>
     <li><a href="createBook.html"><button type="button">Add a new book</button></a></li>
@@ -15,6 +16,13 @@
     <li><a href="deleteBook.html"><button type="button">Delete a book</button></a></li>
     <li><button type="button" onclick="Book.clearData()">Clear database</button></li>
     <li><button type="button" onclick="Book.createTestData()">Create test data</button></li>
+
   </menu>
+  <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 </body>
 </html> 
