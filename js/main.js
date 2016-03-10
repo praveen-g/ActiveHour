@@ -1,6 +1,8 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET","https://www.codecademy.com/", false);
-xhr.send();
+var createRestCalls= function(type, url){
+	var xhr = new XMLHttpRequest();
+	xhr.open(method,url, false);
+	xhr.send();
+	return xhr
+}
 
-console.log(xhr.status);
-console.log(xhr.statusText);
+console.log(createRestCalls("GET","https://www.codecademy.com/"))
