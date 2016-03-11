@@ -72,17 +72,10 @@ function statusChangeCallback(response) {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      var facebook_login_button = document.getElementById('loginButton');
+      var facebook_login_button = document.getElementById('facebookLoginButton');
       facebook_login_button.style.display = "none";
       // document.getElementById('status').innerHTML =
       //   'Thanks for logging in, ' + response.name + '!';
     });
 
-    function logout(){
-
-      FB.logout(function(response) {
-      // Person is now logged out
-      });
-      
-    }
   }
