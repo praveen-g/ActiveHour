@@ -11,9 +11,10 @@
   <h2>When are your friends most active?</h2>
   <script src="js/facebookSDK.js"></script>
   
-  <div id="status">
-  	<fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
+  <div id="loginButton">
+  <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
+  <div id="status"></div>
   </div>
-
+  <button onclick="logout()">Logout</button>
 </body>
 </html> 
