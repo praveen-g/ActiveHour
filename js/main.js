@@ -6,3 +6,8 @@ var createRestCalls= function(method, url){
 }
 
 console.log(createRestCalls("GET","https://www.codecademy.com/"))
+
+function getAccessToken(){
+	console.log(document.URL);
+	console.log(window.location.href);
+}

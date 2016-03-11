@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <title>Active Hour</title>
   <script src="js/main.js"></script>
-  <script type="instagramAPI.js"></script>
 </head>
 <body>
 
   <h1>Active Hour</h1>
   <h2>When are your friends most active?</h2>
   <script src="js/facebookSDK.js"></script>
+   <script type="instagramAPI.js"></script>
   
   <div id="facebookLoginButton">
   <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
   <div id="status"></div>
   </div>
 
-  <script type="instagramAPI.js"></script>
   <div id = "instagramLoginButton" >
   <button onclick="getAccessToken()" href="https://api.instagram.com/oauth/authorize/?client_id= e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token">Login to Instagram</button>
-  <script type="instagramAPI.js"></script>
+ 
 </body>
 </html> 
