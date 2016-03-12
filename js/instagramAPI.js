@@ -6,5 +6,4 @@ function getAccessToken(){
 	var exp="/token=";
 	instagram_access_token = document.URL.match(exp);
 	console.log(instagram_access_token);
-	instagram_access_token=instagram_access_token.substring(7);
 };
