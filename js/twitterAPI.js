@@ -1,23 +1,31 @@
-var twitter_access_token="":
+var twitter_access_token="";
 
-function getTwitterAccessToken(){
-	var xmlhttp = new XMLHttpRequest();
-	var method = "POST";
-	var url= "https://api.twitter.com/oauth/request_token";
-	var data= {
-		"consumerKey": "plUf1tbImpjYtMeD20bg8xdzh",
-		"consumerSecret": "u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R"
-	}
-	xmlhttp.open(method,url);
+function twitteAccessToken(){
+	var xmlhttp= new XMLHttpRequest();
+	xhr.open("POST" , "https://api.twitter.com/oauth/request_token", true);
+	xhr.send("oauth_callback=http%3A%2F%2Fpraveen-g.github.io%2FActiveHour%2F");
+	xhr.setRequestHeader('Authorization: OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="3c5e6a08b3ae3d77ab42cc364b56b54a", oauth_signature="4K39LTLXwXo7y%2Bk%2FUU6groSb4ew%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457761086", oauth_version="1.0"');
+	console.log(xhr.responseText);
+	var Twitter = require('twitter-node-client').Twitter;
 
+};
+//Callback functions
+var error = function (err, response, body) {
+    console.log('ERROR [%s]', err);
+};
+var success = function (data) {
+    console.log('Data [%s]', data);
+};
+
+var Twitter = require('twitter-js-client').Twitter;
+
+//Get this data from your twitter apps dashboard
+var config = {
+    "consumerKey": "plUf1tbImpjYtMeD20bg8xdzh ",
+    "consumerSecret": "	u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R",
+    "accessToken": "XXX",
+    "accessTokenSecret": "XXX",
+    "callBackUrl": "http://praveen-g.github.io/ActiveHour/"
 }
 
-
-var xhttp = new XMLHttpRequest();
-xhttp.open("POST", "https://api.twitter.com/oauth/request_token", true);
-
-var params= {"OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="09610640c8baa09f95f59a0743f49b92", oauth_signature="UBkC6M5F%2BKvQOTM59KuEzs5CYf0%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457758896", oauth_version="1.0"
-
-xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xhttp.send("fname=Henry&lname=Ford");
-Try it yourself »
+var twitter = new Twitter(config);
