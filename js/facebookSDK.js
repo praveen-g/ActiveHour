@@ -1,3 +1,5 @@
+var facebook_access_token="";
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -9,6 +11,7 @@ function statusChangeCallback(response) {
       // Logged into your app and Facebook.
       testAPI();
       console.log(response.authResponse.accessToken);
+      facebook_access_token=response.authResponse.accessToken;
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +

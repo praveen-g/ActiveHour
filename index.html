@@ -1,20 +1,23 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Active Hour</title>
-
+  <script src="https://github.com/MrSwitch/hello.js/blob/master/dist/hello.min.js"</script>
   <script src="js/main.js"></script>
   
 
 </head>
+
 <body>
 
   <h1>Active Hour</h1>
   <h2>When are your friends most active?</h2>
   <script src="js/facebookSDK.js"></script>
   <script src="js/instagramAPI.js"></script>
-
+  <script src="js/twitterAPI.js"></script>
   <div id="facebookLoginButton">
   <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
   </div>
@@ -23,11 +26,11 @@
     <button id = "instagramLoginButton" onclick="changeURL();">Login to Instagram</button>
   </div>
 
-  <button onclick="yes();">gregdshda</button>
-
   <div>
-    <script src="js/twitterAPI.js"></script>
-    <button id = "twitterLoginButton" href="https://api.twitter.com/oauth/authorize/?consumer_key=plUf1tbImpjYtMeD20bg8xdzh&consumer_secret=u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token"> Login to Twitter</button>
+    <button id = "twitterLoginButton" onclick="hello( 'twitter' ).login()"> Login to Twitter</button>
+    <div id="login"></div>
   </div>
+
 </body>
+
 </html> 

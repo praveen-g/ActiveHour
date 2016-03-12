@@ -13,7 +13,3 @@ function getAccessToken(){
 	console.log(instagram_access_token);
 }
 window.onload = getAccessToken()
-
-function yes(){
-	console.log(instagram_access_token)
-}
