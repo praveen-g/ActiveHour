@@ -6,8 +6,6 @@ function changeURL(){
 };
 
 function getAccessToken(){
-	var instagram_login_button = document.getElementById('instagramLoginButton');
-      instagram_login_button.style.display = "none";
 
 	console.log(document.location.hash);
 	
@@ -15,3 +13,7 @@ function getAccessToken(){
 	console.log(instagram_access_token);
 }
 window.onload = getAccessToken()
+
+function yes(){
+	console.log(instagram_access_token)
+}
