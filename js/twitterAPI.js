@@ -17,15 +17,15 @@ var success = function (data) {
     console.log('Data [%s]', data);
 };
 
-var Twitter = require('twitter-js-client').Twitter;
+// var Twitter = require('twitter-js-client').Twitter;
 
-//Get this data from your twitter apps dashboard
-var config = {
-    "consumerKey": "plUf1tbImpjYtMeD20bg8xdzh ",
-    "consumerSecret": "	u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R",
-    "accessToken": "XXX",
-    "accessTokenSecret": "XXX",
-    "callBackUrl": "http://praveen-g.github.io/ActiveHour/"
-}
+// //Get this data from your twitter apps dashboard
+// var config = {
+//     "consumerKey": "plUf1tbImpjYtMeD20bg8xdzh ",
+//     "consumerSecret": "	u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R",
+//     "accessToken": "XXX",
+//     "accessTokenSecret": "XXX",
+//     "callBackUrl": "http://praveen-g.github.io/ActiveHour/"
+// }
 
-var twitter = new Twitter(config);
+// var twitter = new Twitter(config);
