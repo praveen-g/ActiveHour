@@ -1,7 +1,7 @@
 var instagram_access_token= "";
 
 function getAccessToken(){
-	window.history.pushState("https://api.instagram.com/oauth/authorize/?client_id=e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token")
+	window.history.pushState({},null,"https://api.instagram.com/oauth/authorize/?client_id=e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token")
 	window.history.forward()
 	console.log(document.URL);
 	//window.location.href="https://api.instagram.com/oauth/authorize/?client_id=e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token";
