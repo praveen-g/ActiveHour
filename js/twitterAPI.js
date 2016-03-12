@@ -4,7 +4,7 @@ function twitteAccessToken(){
 	var xhr= new XMLHttpRequest();
 	xhr.open("POST" , "https://api.twitter.com/oauth/request_token", true);
 	xhr.send("oauth_callback=http%3A%2F%2Fpraveen-g.github.io%2FActiveHour%2F");
-	xhr.setRequestHeader('Authorization: OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="3c5e6a08b3ae3d77ab42cc364b56b54a", oauth_signature="4K39LTLXwXo7y%2Bk%2FUU6groSb4ew%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457761086", oauth_version="1.0"');
+	xhr.setRequestHeader('Authorization','OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="3c5e6a08b3ae3d77ab42cc364b56b54a", oauth_signature="4K39LTLXwXo7y%2Bk%2FUU6groSb4ew%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457761086", oauth_version="1.0"');
 	console.log(xhr.responseText);
 	var Twitter = require('twitter-node-client').Twitter;
 
