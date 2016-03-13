@@ -24,7 +24,7 @@ function twitterAuthorize(){
 }
 
 function getTwitterAccessToken(){
-    
+    console.log(document.getElementById("PINFIELD").value);
     cb.__call(
         "oauth_accessToken",
         {oauth_verifier: document.getElementById("PINFIELD").value},
@@ -36,6 +36,7 @@ function getTwitterAccessToken(){
             // consider storing the token in a cookie or HTML5 local storage 
         }
     );
+
     var current_url = window.location.href.toString();
     var query       = current_url.match(/\?(.+)$/).split("&amp;");
     var parameters  = {};
