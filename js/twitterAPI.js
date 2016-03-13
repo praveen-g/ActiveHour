@@ -1,11 +1,10 @@
 
-var cb          = new Codebird;
-cb.setConsumerKey("5Y7kd4M5Ucwpufbj95dekJAa2", "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4");
-
 function twitterAccess(){
-
     
-    var current_url = location.toString();
+    var cb          = new Codebird;
+    cb.setConsumerKey("5Y7kd4M5Ucwpufbj95dekJAa2", "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4");
+    
+    var current_url = window.location.href.toString();
     var query       = current_url.match(/\?(.+)$/).split("&amp;");
     var parameters  = {};
     var parameter;
