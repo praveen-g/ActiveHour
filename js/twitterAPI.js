@@ -1,9 +1,8 @@
+var cb          = new Codebird;
+cb.setConsumerKey("5Y7kd4M5Ucwpufbj95dekJAa2", "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4");
 
 function twitterAuthorize(){
     
-    var cb          = new Codebird;
-    cb.setConsumerKey("5Y7kd4M5Ucwpufbj95dekJAa2", "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4");
-
     cb.__call(
         "oauth_requestToken",
         {oauth_callback: "oob"},
