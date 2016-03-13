@@ -1,28 +1,82 @@
-var twitter_access_token="";
+cb.__call(
+    "oauth_requestToken",
+    {oauth_callback: "oob"},
+    function (reply,rate,err) {
+        if (err) {
+            console.log("error response or timeout exceeded" + err.error);
+        }
+        if (reply) {
+            // stores it
+            cb.setToken(reply.oauth_token, reply.oauth_token_secret);
 
-function twitterAccessToken(){
-	var xhr= new XMLHttpRequest();
-	xhr.open("POST" , "https://api.twitter.com/oauth/request_token", true);
-	xhr.send("oauth_callback=http%3A%2F%2Fpraveen-g.github.io%2FActiveHour%2F");
-	xhr.setRequestHeader('Authorization','OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="3c5e6a08b3ae3d77ab42cc364b56b54a", oauth_signature="4K39LTLXwXo7y%2Bk%2FUU6groSb4ew%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457761086", oauth_version="1.0"');
-	console.log(xhr.responseText);
-	//var Twitter = require('twitter-node-client').Twitter;
+            // gets the authorize screen URL
+            cb.__call(
+                "oauth_authorize",
+                {},
+                function (auth_url) {
+                    window.codebird_auth = window.open(auth_url);
+                }
+            );
+        }
+    }
+);
 
-};
-//Callback functions
-var error = function (err, response, body) {
-    console.log('ERROR [%s]', err);
-};
-var success = function (data) {
-    console.log('Data [%s]', data);
-};
+// <script type="text/javascript">   
+// !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/anywhere.js?id="+gTWApplicationId;fjs.parentNode.insertBefore(js,fjs);}}(document, "script",'twitter-anywhere');   
+// //describe the login actions  
+// twttr.anywhere(function (T) {  
+// T.bind("authComplete", function (e, user) {  
+//         var token = user.attributes._identity;  
+//         //define the login function on your client through Twitter  
+//     });  
+// });  
+// //function we link to the click on the custom login button through Twitter  
+// function doTWSignIn() {  
+//     twttr.anywhere(function (T) {  
+//         T.signIn();  
+//     });  
+// }  
+// </script>  
+
+
+// OAuth.initialize('eHdLrIGV7RLgrsE4tpd2ct249RA');
+
+// //Example with Twitter with the cache option enabled
+// OAuth.popup('twitter', {cache: true}).done(function(twitter) {
+//   //make API calls with `twitter`
+// }).fail(function(err) {
+//   //todo when the OAuth flow failed
+// })
+
+
+
+
+
+// var twitter_access_token="";
+
+// function twitterAccessToken(){
+// 	var xhr= new XMLHttpRequest();
+// 	xhr.open("POST" , "https://api.twitter.com/oauth/request_token", true);
+// 	xhr.send("oauth_callback=http%3A%2F%2Fpraveen-g.github.io%2FActiveHour%2F");
+// 	xhr.setRequestHeader('Authorization','OAuth oauth_consumer_key="plUf1tbImpjYtMeD20bg8xdzh", oauth_nonce="3c5e6a08b3ae3d77ab42cc364b56b54a", oauth_signature="4K39LTLXwXo7y%2Bk%2FUU6groSb4ew%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1457761086", oauth_version="1.0"');
+// 	console.log(xhr.responseText);
+// 	//var Twitter = require('twitter-node-client').Twitter;
+
+// };
+// //Callback functions
+// var error = function (err, response, body) {
+//     console.log('ERROR [%s]', err);
+// };
+// var success = function (data) {
+//     console.log('Data [%s]', data);
+// };
 
 // var Twitter = require('twitter-js-client').Twitter;
 
-// //Get this data from your twitter apps dashboard
+//Get this data from your twitter apps dashboard
 // var config = {
-//     "consumerKey": "plUf1tbImpjYtMeD20bg8xdzh ",
-//     "consumerSecret": "	u7FJ1J1UGjhI3nmTeA87EonkfhnuxI5Ntt55KN62apDHIy3O6R",
+//     "consumerKey": "5Y7kd4M5Ucwpufbj95dekJAa2 ",
+//     "consumerSecret": "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4",
 //     "accessToken": "XXX",
 //     "accessTokenSecret": "XXX",
 //     "callBackUrl": "http://praveen-g.github.io/ActiveHour/"
