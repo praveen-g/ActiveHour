@@ -1,5 +1,5 @@
 
-function twitterAccess(){
+function twitterAuthorize(){
     
     var cb          = new Codebird;
     cb.setConsumerKey("5Y7kd4M5Ucwpufbj95dekJAa2", "6KukfHQyzcSx1AxX0jP9UqSPMKLeeKyBJSVURFbOINN6OyYQG4");
@@ -20,7 +20,11 @@ function twitterAccess(){
                 }
             );
         }
+
     );
+}
+
+function getTwitterAccessToken(){
     
     cb.__call(
         "oauth_accessToken",
