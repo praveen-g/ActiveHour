@@ -3,28 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Active Hour</title>
-  <script src="js/main.js"></script>
 
+  <script type="text/javascript" src="js/codebird.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/facebookSDK.js"></script>
+  <script src="js/instagramAPI.js"></script>
+  <script src="js/twitterAPI.js"></script>
+  
 </head>
 <body>
 
   <h1>Active Hour</h1>
   <h2>Login with your favourite social media platforms to check when you receive the most responses across various platforms to know when is the best time to post content that will get the most views!</h2>
-  <script src="js/facebookSDK.js"></script>
-  <script src="js/instagramAPI.js"></script>
-  <script src="js/twitterAPI.js"></script>
-
- <!-- 
- 
-  <script type="text/javascript" src="codebird.js"></script>
-
-
-  <script type="text/javascript">
-  var cb = new Codebird;
-  cb.setConsumerKey("YOURKEY", "YOURSECRET");
-  </script>
-  -->
-
+  
   <div id="facebookLoginButton">
   <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
   </div>
@@ -35,6 +26,7 @@
 
   <div>
     <button id = "twitterLoginButton" onclick="twitterAccess();"> Login to Twitter</button>
+    <input id = "PINFIELD" value = "Pin Field"></input>
   </div>
 </body>
 </html> 
