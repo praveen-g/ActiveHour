@@ -16,10 +16,12 @@
 
   <script type="text/javascript" src="codebird.js"></script>
 
+ <!-- 
   <script type="text/javascript">
   var cb = new Codebird;
   cb.setConsumerKey("YOURKEY", "YOURSECRET");
   </script>
+  -->
 
   <div id="facebookLoginButton">
   <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
@@ -30,7 +32,7 @@
   </div>
 
   <div>
-    <button id = "twitterLoginButton" onclick="doTWSignIn();"> Login to Twitter</button>
+    <button id = "twitterLoginButton" onclick="twitterAccess();"> Login to Twitter</button>
   </div>
 </body>
 </html> 
