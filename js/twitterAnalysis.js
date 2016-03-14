@@ -45,7 +45,7 @@ function computeDifference(a1,a2){
         diff.push(k);
     }
 
-    return diff;
+    console.log( diff);
 }
 
 function findFriends(friends){
@@ -84,12 +84,13 @@ function findFriends(friends){
 function getFriends(){
 
 	console.log(2)
+	var values=[]
 	cb.__call(
 		"friends_ids",
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
-			var values= findFriends(friends)
+			values= findFriends(friends)
 			return values
 		}
 	);
@@ -99,6 +100,5 @@ function twitterAnalysis(){
 	
 	var values= getFriends()
 	console.log(6)
-	var account = computeDifference(values[1],values[2][values[0]])
-	console.log(account)
+	computeDifference(values[1],values[2][values[0]])
 }
