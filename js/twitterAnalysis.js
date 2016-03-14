@@ -95,7 +95,10 @@ function findFriends(){
 
 function twitterAnalysis(){
 	console.log(1)
-	index,friends,common_friends = findFriends()
+	var values= findFriends()
+	var index = values[0]
+	var friends = values[1]
+	var common_friends = values[2]
 	console.log(6)
 	var account = computeDifference(friends,common_friends[index])
 	console.log(account)
