@@ -61,6 +61,8 @@ function findFriends(friends){
 				"user_id": friends[i]
 			},
 			function (reply,rate, err){
+				
+				var common_friends_length=[]
 
 				friends_of_friends.push(reply.ids);
 
