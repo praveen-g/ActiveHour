@@ -38,71 +38,14 @@ function getTwitterAccessToken(){
             console.log(reply)
             twitterToken = reply.oauth_token;
             twitterSecret = reply.oauth_token_secret;
+            var twitter_login_button = document.getElementById('twitterLoginButton');
+            twitter_login_button.style.display = "none";
+            var twitter_input = document.getElementById('PINFIELD');
+            twitter_input.style.display = "none";
+            var twitter_submit_button = document.getElementById('submitButton');
+            twitter_submit_button.style.display = "none";
             // if you need to persist the login after page reload, 
             // consider storing the token in a cookie or HTML5 local storage 
         }
     );
 }
-
-//     var current_url = window.location.href.toString();
-//     var query       = current_url.match(/\?(.+)$/).split("&amp;");
-//     var parameters  = {};
-//     var parameter;
-
-    
-   
-//     for (var i = 0; i < query.length; i++) {
-//         parameter = query[i].split("=");
-//         if (parameter.length === 1) {
-//             parameter[1] = "";
-//         }
-//         parameters[decodeURIComponent(parameter[0])] = decodeURIComponent(parameter[1]);
-//     }
-
-//     // check if oauth_verifier is set 
-//     if (typeof parameters.oauth_verifier !== "undefined") {
-//         console.log(parameters);
-//         cb.setToken(stored_somewhere.oauth_token, stored_somewhere.oauth_token_secret);
-     
-//         cb.__call(
-//             "oauth_accessToken",
-//             {
-//                 oauth_verifier: parameters.oauth_verifier
-//             },
-//             function (reply) {
-//                 cb.setToken(reply.oauth_token, reply.oauth_token_secret);
-     
-//                 // if you need to persist the login after page reload, 
-//                 // consider storing the token in a cookie or HTML5 local storage 
-//             }
-//         );
-//     }
-// }
-
-// <script type="text/javascript">   
-// !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/anywhere.js?id="+gTWApplicationId;fjs.parentNode.insertBefore(js,fjs);}}(document, "script",'twitter-anywhere');   
-// //describe the login actions  
-// twttr.anywhere(function (T) {  
-// T.bind("authComplete", function (e, user) {  
-//         var token = user.attributes._identity;  
-//         //define the login function on your client through Twitter  
-//     });  
-// });  
-// //function we link to the click on the custom login button through Twitter  
-// function doTWSignIn() {  
-//     twttr.anywhere(function (T) {  
-//         T.signIn();  
-//     });  
-// }  
-// </script>  
-
-
-// OAuth.initialize('eHdLrIGV7RLgrsE4tpd2ct249RA');
-
-// //Example with Twitter with the cache option enabled
-// OAuth.popup('twitter', {cache: true}).done(function(twitter) {
-//   //make API calls with `twitter`
-// }).fail(function(err) {
-//   //todo when the OAuth flow failed
-// })
-

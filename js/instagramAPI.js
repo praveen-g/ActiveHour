@@ -11,5 +11,7 @@ function getAccessToken(){
 	
 	instagram_access_token = document.location.hash
 	console.log(instagram_access_token);
+	var instagram_login_button = document.getElementById('instagramLoginButton');
+    instagram_login_button.style.display = "none";
 }
 window.onload = getAccessToken()
