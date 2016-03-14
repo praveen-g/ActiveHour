@@ -21,6 +21,8 @@ function intersect(array1, array2) {
          bLast--;
       }
    }
+   console.log("RESULT")
+   console.log(result)
    return result;
 }
 
@@ -34,8 +36,6 @@ function twitterAnalysis(){
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
-			console.log(friends);
-
 			for(i=0; i<10; i++){
 				cb.__call(
 					"friends_ids",
@@ -44,8 +44,9 @@ function twitterAnalysis(){
 					},
 					function (reply,rate, err){
 						friends_of_friends.push(reply.ids);
-						console.log(friends_of_friends)
+
 						common_friends.push(intersect(friends,reply.ids));
+
 						common_friends_length=[];
 
 						for(i=0;i<common_friends.length;i++){
