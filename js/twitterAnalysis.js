@@ -1,4 +1,4 @@
-
+var values=[]
 
 function intersect(array1, array2) {
 	console.log(4)
@@ -98,7 +98,7 @@ function getFriends(){
 
 function twitterAnalysis(){
 	
-	var values= getFriends()
+	getFriends()
 	console.log(6)
 	computeDifference(values[1],values[2][values[0]])
 }
