@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Active Hour</title>
 
-  <script type="text/javascript" src="js/codebird.js"></script>
+  <script type="text/javascript" src="node_modules/codebird/codebird.js"></script>
   <script src="js/main.js"></script>
   
   <script src="js/facebookSDK.js"></script>
@@ -26,7 +26,7 @@
   </div>
 
   <div>
-    <button id = "twitterLoginButton" onclick="twitterAuthorize;"> Login to Twitter</button><br>
+    <button id = "twitterLoginButton" onclick="twitterAuthorize();"> Login to Twitter</button><br>
     <input id = "PINFIELD" placeholder="" = "Pin Field"></input>
     <input type="button" onclick="getTwitterAccessToken();" value="Submit"></input>
   </div>
