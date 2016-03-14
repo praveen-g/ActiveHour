@@ -11,11 +11,19 @@ function twitterAnalysis(){
 	);
 
 	for(i=0; i<friends.length; i++){
+
+		getFriendsOfFriends();
 		
-		cb.__call(
+	}
+
+}
+
+function getFriendsOfFriends(){
+
+	cb.__call(
 			"friends_ids",
 			{
-				// "user_id": friends[i]
+				"user_id": friends[i]
 			},
 			function (reply,rate, err){
 
@@ -23,6 +31,4 @@ function twitterAnalysis(){
 				console.log(friends_of_friends)
 			}
 		);
-	}
-
 }
