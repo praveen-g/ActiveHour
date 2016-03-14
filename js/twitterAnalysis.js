@@ -68,19 +68,19 @@ function twitterAnalysis(){
 	return [friends, common_friends]
 }
 
-function twitterAnalysis(){
+// function twitterAnalysis(){
 
-	friends = findFriends();
-	common_friends=friends[1];
-	common_friends_length=[];
-	console.log(5)
-	for(i=0;i<common_friends.length;i++){
-		common_friends_length.push(common_friends[i].length);
-	}
-	var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
-	friend_id=friends[index]
-	accounts_of_interest = common_friends[i]-friends
-	console.log(accounts_of_interest)
+// 	friends = findFriends();
+// 	common_friends=friends[1];
+// 	common_friends_length=[];
+// 	console.log(5)
+// 	for(i=0;i<common_friends.length;i++){
+// 		common_friends_length.push(common_friends[i].length);
+// 	}
+// 	var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+// 	friend_id=friends[index]
+// 	accounts_of_interest = common_friends[i]-friends
+// 	console.log(accounts_of_interest)
 
-}
+// }
 
