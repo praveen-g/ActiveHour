@@ -1,4 +1,6 @@
-var values=[]
+var friends=[]
+var common_friends=[]
+var index
 
 function intersect(array1, array2) {
 	console.log(4)
@@ -25,7 +27,7 @@ function intersect(array1, array2) {
    return result;
 }
 
-function computeDifference(a1,a2){
+function computeDifference(a1=friends,a2=common_friends[index]){
 	console.log(6)
 	console.log(7)
 	var a = [], diff = [];
@@ -52,7 +54,6 @@ function computeDifference(a1,a2){
 function findFriends(friends){
 	console.log(3)
 	var friends_of_friends=[]
-	var common_friends=[]
 
 	for(i=0; i<10; i++){
 
@@ -74,8 +75,7 @@ function findFriends(friends){
 					common_friends_length.push(common_friends[i].length);
 				}
 
-				var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
-				return [index,friends,common_friends]
+				index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 				
 			}
 		);
@@ -90,7 +90,6 @@ function getFriends(){
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
-			values= findFriends(friends)
 		}
 	);
 }
@@ -98,6 +97,5 @@ function getFriends(){
 function twitterAnalysis(){
 	
 	getFriends()
-	
-	computeDifference(values[1],values[2][values[0]])
+	computeDifference()
 }
