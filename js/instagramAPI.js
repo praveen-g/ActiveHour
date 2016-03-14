@@ -14,4 +14,4 @@ function getAccessToken(){
 	var instagram_login_button = document.getElementById('instagramLoginButton');
     instagram_login_button.style.display = "none";
 }
-window.onload = getAccessToken()
+window.onload = getAccessToken();

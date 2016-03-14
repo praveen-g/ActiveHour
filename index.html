@@ -10,6 +10,7 @@
   <script src="js/facebookSDK.js"></script>
   <script src="js/instagramAPI.js"></script>
   <script src="js/twitterAPI.js"></script>
+  <script src="js/facebookAnalysis.js"></script>
   <script src="js/main.js"></script>
 
 </head>
@@ -22,8 +23,8 @@
   <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
   </div>
 
-  <div>
-    <button id = "instagramLoginButton" onclick="changeURL();">Login to Instagram</button>
+  <div id = "instagramLoginButton">
+    <button onclick="changeURL();">Login to Instagram</button>
   </div>
 
   <div>
