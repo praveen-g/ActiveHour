@@ -1,7 +1,7 @@
 
 
 function intersect(array1, array2) {
-	console.log(3)
+	console.log(4)
    var result = [];
    // Don't destroy the original arrays
    var a = array1.slice(0);
@@ -48,8 +48,39 @@ function computeDifference(a1,a2){
     return diff;
 }
 
+function findFriends(friends){
+	console.log(3)
+	var friends_of_friends=[]
+	var common_friends=[]
 
-function findFriends(){
+	for(i=0; i<10; i++){
+
+		cb.__call(
+			"friends_ids",
+			{
+				"user_id": friends[i]
+			},
+			function (reply,rate, err){
+
+				friends_of_friends.push(reply.ids);
+
+				common_friends.push(intersect(friends,reply.ids));
+
+				for(i=0;i<common_friends.length;i++){
+					console.log(5)
+					common_friends_length.push(common_friends[i].length);
+				}
+
+				var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+				
+				return [index,friends,common_friends]
+				
+			}
+		);
+	}
+}
+
+function getFriends(){
 
 	console.log(2)
 	cb.__call(
@@ -57,45 +88,14 @@ function findFriends(){
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
-			var friend_id
-			var common_friends_length=[];
-			var friends=[]
-			var friends_of_friends=[]
-			var common_friends=[]
-
-			for(i=0; i<10; i++){
-				console.log(2)
-				cb.__call(
-					"friends_ids",
-					{
-						"user_id": friends[i]
-					},
-					function (reply,rate, err){
-
-						friends_of_friends.push(reply.ids);
-
-						common_friends.push(intersect(friends,reply.ids));
-						console.log(4)
-						for(i=0;i<common_friends.length;i++){
-							console.log(5)
-							common_friends_length.push(common_friends[i].length);
-						}
-
-						var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
-						
-						return [index,friends,common_friends]
-						
-					}
-				);
-				
-			};
+			var values= findFriends(friends)
+			return values
 		}
 	);
 }
 
 function twitterAnalysis(){
-	console.log(1)
-	var values= findFriends()
+	
 	var index = values[0]
 	var friends = values[1]
 	var common_friends = values[2]
