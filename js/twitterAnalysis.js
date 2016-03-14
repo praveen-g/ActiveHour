@@ -28,26 +28,26 @@ function intersect(array1, array2) {
    return result;
 }
 
-function computeDiff(){
-	var a = [], diff = [];
-	for (var i = 0; i < friends.length; i++) {
-        a[friends[i]] = true;
-    }
+// function computeDiff(){
+// 	var a = [], diff = [];
+// 	for (var i = 0; i < friends.length; i++) {
+//         a[friends[i]] = true;
+//     }
 
-    for (var i = 0; i < friends_of_friends[index].length; i++) {
-        if (a[friends_of_friends[index][i]]) {
-            delete a[friends_of_friends[index][i]];
-        } else {
-            a[friends_of_friends[index][i]] = true;
-        }
-    }
+//     for (var i = 0; i < friends_of_friends[index].length; i++) {
+//         if (a[friends_of_friends[index][i]]) {
+//             delete a[friends_of_friends[index][i]];
+//         } else {
+//             a[friends_of_friends[index][i]] = true;
+//         }
+//     }
 
-    for (var k in a) {
-        diff.push(k);
-    }
+//     for (var k in a) {
+//         diff.push(k);
+//     }
 
-    console.log( diff);
-}
+//     console.log( diff);
+// }
 
 function findFriends(){
 
@@ -73,11 +73,12 @@ function findFriends(){
 		common_friends_length.push(common_friends[i].length);
 	}
 	index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+	console.log(friends[index])
+	console.log(friends_of_friends[index])
 }
 
 function twitterAnalysis(){
 
-	console.log(2)
 	cb.__call(
 		"friends_ids",
 		{},
@@ -87,5 +88,4 @@ function twitterAnalysis(){
 			
 		}
 	);
-	computeDiff()
 }
