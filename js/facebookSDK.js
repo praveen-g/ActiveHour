@@ -1,5 +1,3 @@
-var facebook_access_token="";
-
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
