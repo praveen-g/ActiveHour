@@ -50,6 +50,7 @@ function findFriends(){
 					console.log(5)
 					common_friends_length.push(common_friends[i].length);
 				}
+				console.log(common_friends)
 
 				index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 
