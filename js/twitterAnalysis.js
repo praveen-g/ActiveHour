@@ -19,7 +19,7 @@ function twitterAnalysis(){
 					},
 					function (reply,rate, err){
 
-						friends_of_friends.append(reply.ids);
+						friends_of_friends.push(reply.ids);
 						console.log(friends_of_friends)
 					}
 				);
