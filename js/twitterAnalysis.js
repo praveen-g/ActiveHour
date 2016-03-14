@@ -56,29 +56,30 @@ function twitterAnalysis(){
 
 						var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 						friend_id=friends[index]
+						console.log(friend_id[index])
 						accounts_of_interest = common_friends[index]-friends
 						console.log(common_friends[index])
 						console.log("-------")
 
-						var a = [], diff = [];
+						// var a = [], diff = [];
 
-					    for (var i = 0; i < friends.length; i++) {
-					        a[friends[i]] = true;
-					    }
+					 //    for (var i = 0; i < friends.length; i++) {
+					 //        a[friends[i]] = true;
+					 //    }
 
-					    for (var i = 0; i < common_friends[index].length; i++) {
-					        if (a[common_friends[index][i]]) {
-					            delete a[common_friends[index][i]];
-					        } else {
-					            a[common_friends[index][i]] = true;
-					        }
-					    }
+					 //    for (var i = 0; i < common_friends[index].length; i++) {
+					 //        if (a[common_friends[index][i]]) {
+					 //            delete a[common_friends[index][i]];
+					 //        } else {
+					 //            a[common_friends[index][i]] = true;
+					 //        }
+					 //    }
 
-					    for (var k in a) {
-					        diff.push(k);
-					    }
+					 //    for (var k in a) {
+					 //        diff.push(k);
+					 //    }
 
-					    console.log(diff)
+					 //    console.log(diff)
 					}
 				);
 				
