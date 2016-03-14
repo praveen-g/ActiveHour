@@ -51,7 +51,7 @@ function computeDifference(a1=friends,a2=common_friends[index]){
     console.log( diff);
 }
 
-function findFriends(friends){
+function findFriends(){
 	console.log(3)
 	var friends_of_friends=[]
 
@@ -90,6 +90,7 @@ function getFriends(){
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
+			findFriends();
 		}
 	);
 }
