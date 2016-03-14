@@ -24,7 +24,7 @@ function intersect(array1, array2) {
    return result;
 }
 
-function findFriends(){
+function twitterAnalysis(){
 	friends=[]
 	friends_of_friends=[]
 	common_friends=[]
@@ -51,24 +51,26 @@ function findFriends(){
 				);
 				
 			};
+			common_friends_length=[];
+			for(i=0;i<common_friends.length;i++){
+				common_friends_length.push(common_friends[i].length);
+			}
+			var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+			friend_id=friends[index]
+			accounts_of_interest = common_friends[i]-friends
+			console.log(accounts_of_interest)
+
 		}
 	);
 	console.log("2")
 	return [friends, common_friends]
 }
 
-function twitterAnalysis(){
+function {
 
 	friends = findFriends();
 	common_friends=friends[1];
-	common_friends_length=[];
-	for(i=0;i<common_friends.length;i++){
-		common_friends_length.push(common_friends[i].length);
-	}
-	var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
-	friend_id=friends[index]
-	accounts_of_interest = common_friends[i]-friends
-	console.log(accounts_of_interest)
+	
 
 }
 
