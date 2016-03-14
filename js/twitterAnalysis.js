@@ -54,16 +54,17 @@ function twitterAnalysis(){
 			common_friends_length=[];
 			for(i=0;i<common_friends.length;i++){
 				common_friends_length.push(common_friends[i].length);
+				console.log(common_friends_length)
 			}
 			var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+			console.log(index)
 			friend_id=friends[index]
+			console.log(friend_id)
 			accounts_of_interest = common_friends[i]-friends
 			console.log(accounts_of_interest)
 
 		}
 	);
-	console.log("2")
-	return [friends, common_friends]
 }
 
 
