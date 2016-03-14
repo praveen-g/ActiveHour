@@ -1,3 +1,4 @@
+var fb =""
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -40,6 +41,7 @@ function statusChangeCallback(response) {
     version    : 'v2.5' // use graph api version 2.5
   });
 
+  fb=FB;
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
