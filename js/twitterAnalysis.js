@@ -104,6 +104,6 @@ function twitterAnalysis(){
 	var friends = values[1]
 	var common_friends = values[2]
 	console.log(7)
-	var account = computeDifference(friends,common_friends[values[0])
+	//var account = computeDifference(friends,common_friends[values[0])
 	console.log(account)
 }
