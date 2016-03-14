@@ -45,9 +45,10 @@ function getTwitterAccessToken(){
             var twitter_submit_button = document.getElementById('submitButton');
             twitter_submit_button.style.display = "none";
 
-            if flag==true:
+            if (flag == true){
                 var instagram_login_button = document.getElementById('instagramLoginButton');
                 instagram_login_button.style.display = "none";
+            }
             // if you need to persist the login after page reload, 
             // consider storing the token in a cookie or HTML5 local storage 
         }
