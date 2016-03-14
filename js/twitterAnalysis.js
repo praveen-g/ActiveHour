@@ -27,30 +27,6 @@ function intersect(array1, array2) {
    return result;
 }
 
-function computeDifference(a1=friends,a2=common_friends[index]){
-	console.log(6)
-	console.log(7)
-	var a = [], diff = [];
-
-    for (var i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (var i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (var k in a) {
-        diff.push(k);
-    }
-
-    console.log( diff);
-}
-
 function findFriends(){
 	console.log(3)
 	var friends_of_friends=[]
@@ -76,13 +52,16 @@ function findFriends(){
 				}
 
 				index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
+
+				console.log(friends[index])
+				console.log(common_friends[index])
 				
 			}
 		);
 	}
 }
 
-function getFriends(){
+function twitterAnalysis(){
 
 	console.log(2)
 	cb.__call(
@@ -93,10 +72,4 @@ function getFriends(){
 			findFriends();
 		}
 	);
-}
-
-function twitterAnalysis(){
-	
-	getFriends()
-	computeDifference()
 }
