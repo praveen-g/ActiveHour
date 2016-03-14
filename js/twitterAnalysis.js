@@ -96,6 +96,7 @@ function getFriends(){
 
 function twitterAnalysis(){
 	
+	var values= getFriends()
 	var index = values[0]
 	var friends = values[1]
 	var common_friends = values[2]
