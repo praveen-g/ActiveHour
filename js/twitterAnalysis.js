@@ -75,7 +75,7 @@ function findFriends(friends){
 
 				var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 				
-				var account = computeDifference(friends,common_friends[values[0])
+				var account = computeDifference(friends,common_friends[index])
 				return [index,friends,common_friends]
 				
 			}
