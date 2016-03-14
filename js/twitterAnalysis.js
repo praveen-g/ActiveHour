@@ -27,6 +27,7 @@ function intersect(array1, array2) {
    }
    return result;
 }
+
 function computeDiff(){
 	var a = [], diff = [];
 	for (var i = 0; i < friends.length; i++) {
@@ -49,7 +50,6 @@ function computeDiff(){
 }
 
 function findFriends(){
-	console.log(3)
 
 	for(i=0; i<10; i++){
 
@@ -60,26 +60,19 @@ function findFriends(){
 			},
 			function (reply,rate, err){
 
-				var common_friends_length=[]
-
 				friends_of_friends.push(reply.ids);
 
 				common_friends.push(intersect(friends,reply.ids));
 
-				for(i=0;i<common_friends.length;i++){
-					console.log(5)
-					common_friends_length.push(common_friends[i].length);
-				}
-				console.log(common_friends)
-
-				index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
-
-				console.log(friends[index])
-				console.log(friends_of_friends[index])
-							
+				console.log(common_friends)			
 			}
 		);
 	}
+	var common_friends_length=[]
+	for(i=0;i<common_friends.length;i++){
+		common_friends_length.push(common_friends[i].length);
+	}
+	index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 }
 
 function twitterAnalysis(){
@@ -91,7 +84,8 @@ function twitterAnalysis(){
 		function (reply,rate, err){
 			friends = reply.ids;
 			findFriends();
-			computeDiff()
+			
 		}
 	);
+	computeDiff()
 }
