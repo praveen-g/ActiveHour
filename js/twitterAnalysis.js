@@ -2,6 +2,8 @@ function twitterAnalysis(){
 	friends=[]
 	friends_of_friends=[]
 
+	console.log("TWIERGRER#QHEQTH")
+
 	cb.__call(
 		"friends_ids",
 		{},
@@ -9,12 +11,12 @@ function twitterAnalysis(){
 			friends = reply.ids;
 		}
 	);
-
+	console.log("FML")
 	for(i=0; i<friends.length; i++){
 
 		getFriendsOfFriends();
 		
-	}
+	};
 
 }
 
