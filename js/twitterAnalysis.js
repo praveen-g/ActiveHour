@@ -26,6 +26,7 @@ function intersect(array1, array2) {
 }
 
 function computeDifference(a1,a2){
+	console.log(6)
 	console.log(7)
 	var a = [], diff = [];
 
@@ -84,14 +85,12 @@ function findFriends(friends){
 function getFriends(){
 
 	console.log(2)
-	var values=[]
 	cb.__call(
 		"friends_ids",
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
 			values= findFriends(friends)
-			return values
 		}
 	);
 }
@@ -99,6 +98,6 @@ function getFriends(){
 function twitterAnalysis(){
 	
 	getFriends()
-	console.log(6)
+	
 	computeDifference(values[1],values[2][values[0]])
 }
