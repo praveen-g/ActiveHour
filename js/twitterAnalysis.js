@@ -66,11 +66,4 @@ function twitterAnalysis(){
 	return [friends, common_friends]
 }
 
-function {
-
-	friends = findFriends();
-	common_friends=friends[1];
-	
-
-}
 
