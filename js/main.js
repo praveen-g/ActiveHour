@@ -1,4 +1,6 @@
+
 function startAnalysing(){
 	facebookAnalysis();
-	twitterAnalysis();
+	//twitterAnalysis();
+
 }

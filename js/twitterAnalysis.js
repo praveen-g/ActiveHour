@@ -4,7 +4,6 @@ var index
 var friends_of_friends=[]
 
 function intersect(array1, array2) {
-	console.log(4)
    var result = [];
    // Don't destroy the original arrays
    var a = array1.slice(0);
@@ -62,9 +61,7 @@ function findFriends(){
 
 				friends_of_friends.push(reply.ids);
 
-				common_friends.push(intersect(friends,reply.ids));
-
-				console.log(common_friends)			
+				common_friends.push(intersect(friends,reply.ids));		
 			}
 		);
 	}
