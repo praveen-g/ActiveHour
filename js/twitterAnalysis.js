@@ -56,6 +56,7 @@ function twitterAnalysis(){
 				common_friends_length.push(common_friends[i].length);
 				console.log(common_friends_length)
 			}
+			console.log(common_friends_length)
 			var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 			console.log(index)
 			friend_id=friends[index]
