@@ -25,9 +25,6 @@ function intersect(array1, array2) {
 }
 
 function twitterAnalysis(){
-	var friends=[]
-	var friends_of_friends=[]
-	var common_friends=[]
 
 	cb.__call(
 		"friends_ids",
@@ -36,6 +33,11 @@ function twitterAnalysis(){
 			friends = reply.ids;
 			var friend_id
 			var common_friends_length=[];
+			var common_friends=[]
+			var friends=[]
+			var friends_of_friends=[]
+
+
 			for(i=0; i<10; i++){
 				cb.__call(
 					"friends_ids",
@@ -54,14 +56,12 @@ function twitterAnalysis(){
 
 						var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 						friend_id=friends[index]
-
-						console.log(friend_id)
-						accounts_of_interest = common_friends[i]-friends
+						accounts_of_interest = common_friends[index]-friends
+						console.log(accounts_of_interest)
 					}
 				);
 				
 			};
-			//console.log(friend_id)
 		}
 	);
 }
