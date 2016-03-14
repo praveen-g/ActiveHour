@@ -25,15 +25,17 @@ function intersect(array1, array2) {
 }
 
 function twitterAnalysis(){
-	friends=[]
-	friends_of_friends=[]
-	common_friends=[]
+	var friends=[]
+	var friends_of_friends=[]
+	var common_friends=[]
 
 	cb.__call(
 		"friends_ids",
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
+			var friend_id
+			var common_friends_length=[];
 			for(i=0; i<10; i++){
 				cb.__call(
 					"friends_ids",
@@ -41,24 +43,25 @@ function twitterAnalysis(){
 						"user_id": friends[i]
 					},
 					function (reply,rate, err){
+
 						friends_of_friends.push(reply.ids);
 
 						common_friends.push(intersect(friends,reply.ids));
 
-						common_friends_length=[];
-
 						for(i=0;i<common_friends.length;i++){
 							common_friends_length.push(common_friends[i].length);
 						}
+
 						var index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 						friend_id=friends[index]
-						//console.log(friend_id)
+
+						console.log(friend_id)
 						accounts_of_interest = common_friends[i]-friends
 					}
 				);
 				
 			};
-			console.log(friend_id)
+			//console.log(friend_id)
 		}
 	);
 }
