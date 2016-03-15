@@ -4,15 +4,17 @@ var TwitterLOL=0
 function countLols(){
 
   for (var k=0; k<tweets.length; k++){
+
     var tweetText= tweets[k]["text"]
+
     if(tweetText!=""){
+
       tweetText= tweetText.toLowerCase()
       if(tweetText.indexOf("lol")>-1 || tweetText.indexOf("haha")>-1){
-        
-        TwitterLOL++
+
+        this.TwitterLOL++
       }
-    }
-    
+    }   
   }
 }
 
