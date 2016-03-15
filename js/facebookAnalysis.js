@@ -3,21 +3,21 @@ var posts= []
 var comments = []
 var FacebookLOL = 0
 
-function getComments(){
-	console.log(4)
-	for(i=0;i<posts.length;i++){
-		var url = "/"+posts[i]["id"]+"/comments"
-		fb.api(url, function(response){
-			console.log(response)
+// function getComments(){
+// 	console.log(4)
+// 	for(i=0;i<posts.length;i++){
+// 		var url = "/"+posts[i]["id"]+"/comments"
+// 		fb.api(url, function(response){
+// 			console.log(response)
 
-			if (response && !response.error) {
-				console.log(response)
-		        comments=comments.concat(response)
-		      }
-		})
-	}
+// 			if (response && !response.error) {
+// 				console.log(response)
+// 		        comments=comments.concat(response)
+// 		      }
+// 		})
+// 	}
 
-}
+// }
 
 
 function countLOLs(){
@@ -30,13 +30,13 @@ function countLOLs(){
 		}
 
 	}
-	for (i =0; i<comments.length; i++){
-		var str =comments[i]["data"]["message"].toLowerCase()
-		if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
-			FacebookLOL++
-		}
+	// for (i =0; i<comments.length; i++){
+	// 	var str =comments[i]["data"]["message"].toLowerCase()
+	// 	if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
+	// 		FacebookLOL++
+	// 	}
 
-	}
+	// }
 
 
 }
