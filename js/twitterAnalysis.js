@@ -1,9 +1,7 @@
 var tweets=[]
 var TwitterLOL=0
 
-function countLOLs(){
-  console.log(2)
-  for (k =0; k<tweets.length; k++){
+function countLOLs(k){
 
     var str3 =tweets[k]["text"]
     console.log(str3)
@@ -15,7 +13,7 @@ function countLOLs(){
         TwitterLOL++
       }
     }
-  }
+    return TwitterLOL
 }
 
 function twitterAnalysis(){
@@ -26,7 +24,9 @@ function twitterAnalysis(){
       function (result) {
 
           tweets=result
-          countLOLs();
+          for (k =0; k<tweets.length; k++){ 
+            TwitterLOL= countLOLs(k);
+        }
       }
   );
   
