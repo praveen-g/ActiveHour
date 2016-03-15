@@ -5,8 +5,9 @@ var FacebookLOL = 0
 
 function getComments(){
 	console.log(4)
-	for(i=0;i<posts.length;i++){
-		var url = "/"+posts[i]["id"]+"/comments"
+	console.log(posts.length)
+	for(j=0;j<posts.length;j++){
+		var url = "/"+posts[j]["id"]+"/comments"
 		fb.api(url, function(response){
 			console.log(response)
 
@@ -22,9 +23,9 @@ function getComments(){
 
 function countLOLs(){
 	console.log(5)
-	for (i =0; i<posts.length; i++){
+	for (k =0; k<posts.length; k++){
 
-		var str1 =posts[i]["story"]
+		var str1 =posts[k]["message"]
 
 		if (str1!=null){
 
@@ -35,9 +36,10 @@ function countLOLs(){
 			}
 		}
 	}
-	for (i =0; i<comments.length; i++){
+	for (l =0; l<comments.length; l++){
 
-		var str2 =comments[i]["data"]["message"]
+		var str2 =comments[l]["data"]["message"]
+		console.log(str2)
 
 		if (str2!=null){
 
