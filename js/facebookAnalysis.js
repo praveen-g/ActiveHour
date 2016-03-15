@@ -7,12 +7,12 @@ function getComments(){
 	console.log(4)
 	for(i=0;i<posts.length;i++){
 		var url = "/"+posts[i]["id"]+"/comments"
-		console.log(url)
-		console.log("LOOK UP")
 		fb.api(url, function(response){
+			console.log(response)
+
 			if (response && !response.error) {
 				console.log(response)
-		        comments=comments.concat(response.data)
+		        comments=comments.concat(response)
 		      }
 		})
 	}
