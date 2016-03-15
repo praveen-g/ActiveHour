@@ -41,17 +41,21 @@ function countLOLs(){
 
 
 function getComments(){
-	
-	//for(m=0;m<posts.length;m++){
-		console.log(4)
-		fb.api("/"+posts[1]["id"]+"/comments?", function(response){
-		console.log(5.5)
-		if (response && !response.error) {
-	        console.log(response)
-	        comments=comments.concat(response.data)
-	      }
+	var m=0
+	while(true){
+
+		fb.api("/"+posts[m]["id"]+"/comments?", function(response){
+			console.log(5.5)
+			if (response && !response.error) {
+		        console.log(response)
+		        comments=comments.concat(response.data)
+		    }
+		    m++
 		});
-	//}
+		if (m>=posts.length){
+			break
+		}
+	}
 }
 
 
