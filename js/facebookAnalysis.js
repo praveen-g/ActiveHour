@@ -42,7 +42,7 @@ function countLOLs(){
 		if (str2!=null){
 
 			str2=str2.toLowerCase()
-			
+
 			if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
 				FacebookLOL++
 			}
@@ -86,7 +86,7 @@ function facebookAnalysis(){
             	getPost(nextpage)
             	i++;
     		}
-    		// getComments();
+    		getComments();
     		countLOLs();
 		}
 	});
