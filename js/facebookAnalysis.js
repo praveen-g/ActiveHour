@@ -17,7 +17,7 @@ function commentApiCall(url){
 }
 function getComments(){
 	console.log(4)
-	console.log(posts.length)
+
 	for(j=0;j<posts.length;j++){
 		var url = "/"+posts[j]["id"]+"/comments"
 		commentApiCall(url)
