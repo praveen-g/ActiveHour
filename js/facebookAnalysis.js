@@ -45,9 +45,9 @@ function commentAPICall(val){
 		console.log(5.5)
 		if (response && !response.error) {
 	        console.log(response["data"])
-	        comment=response["data"]
+	        comments.concat(response["data"])
 	      }
-	    return  comment
+	    return  1
 	});
 }
 
@@ -56,8 +56,6 @@ function getComments(){
 
 	for(j=0;j<url.length;j++){
 		var arr = commentAPICall(url[j])
-		comments=comments.concat(arr)
-		
 	}
 
 }
