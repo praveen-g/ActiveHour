@@ -40,9 +40,9 @@ function countLOLs(){
 }
 
 
-function formUrls(){
+function getComments(){
 	
-	for(m=0;m<posts.length;m++){
+	for(m=0;m<1;m++){
 		console.log(4)
 		fb.api("/"+posts[m]["id"]+"/comments?", function(response){
 		console.log(5.5)
@@ -87,7 +87,7 @@ function facebookAnalysis(){
             	getPost(nextpage)
             	i++;
     		}
-    		formUrls();
+    		getComments();
     		countLOLs();
 		}
 	});
