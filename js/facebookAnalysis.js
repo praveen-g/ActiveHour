@@ -40,8 +40,8 @@ function countLOLs(){
 }
 function commentAPICall(val){
 
-	fb.api(val, function(response){
-
+	fb.api("/me", function(response){
+		console.log(5.5)
 		if (response && !response.error) {
 	        console.log(response)
 	        comments=comments.concat(response.data)
