@@ -44,8 +44,8 @@ function commentAPICall(val){
 	fb.api(val, function(response){
 		console.log(5.5)
 		if (response && !response.error) {
-	        console.log(response)
-	        comment=response
+	        console.log(response["data"])
+	        comment=response["data"]
 	      }
 	    return  comment
 	});
