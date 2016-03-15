@@ -2,7 +2,10 @@ var tweets=[]
 var TwitterLOL=0
 
 function countLols(){
-  console.log("I'm being called")
+
+  for (var k=0; k<tweets.length; k++){
+    console.log(tweets[k])
+  }
 }
 
 function twitterAnalysis(){
