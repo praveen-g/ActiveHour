@@ -2,6 +2,12 @@
 
 function facebookAnalysis(){
 
+	fb.api("/me", function(response){
+		if (response && !response.error) {
+	        console.log(response)
+	      }
+	})	
+
 	fb.api("/me/games", function(response){
 		if (response && !response.error) {
 	        console.log(response)
@@ -27,7 +33,7 @@ function facebookAnalysis(){
 	      }
 	})
 
-	fb.api("/me/movies", function(response){
+	fb.api("/me/likes", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
