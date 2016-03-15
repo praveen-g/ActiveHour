@@ -8,32 +8,13 @@ function facebookAnalysis(){
 	      }
 	})	
 
-	fb.api("/me?fields=games", function(response){
+	fb.api("/me/posts", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
 	})
 
-	fb.api("/me/books", function(response){
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})
-
-
-	fb.api("/me/movies", function(response){
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})
-
-	fb.api("/me/television", function(response){
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})
-
-	fb.api("/me?fields=likes", function(response){
+	fb.api("/me/photos", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
