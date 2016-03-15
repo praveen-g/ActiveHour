@@ -6,7 +6,7 @@ cb.__call(
     function (result) {
         console.log(result)
         var nextCursor = result1.next_cursor_str;
-        if (nextCursor > 0 and nextCursor<2) {
+        if (nextCursor > 0 && nextCursor<2) {
         cb.__call(
             "followers_list",
             {cursor: nextCursor},
