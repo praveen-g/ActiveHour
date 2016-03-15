@@ -1,15 +1,15 @@
 // FB.api(path, method, params, callback)
-var posts_data = []
-var posts_id = []
+var posts= []
 var comments = []
 var FacebookLOL = 0
 
 function getComments(){
 	console.log(4)
-	for(i=0;i<posts_id.length;i++){
+	for(i=0;i<posts.length;i++){
 
-		fb.api("/"+posts_id[i]+"/comments", function(response){
+		fb.api("/"+posts[i]["id"]+"/comments", function(response){
 			if (response && !response.error) {
+				console.log(response)
 		        comments.concat(response.message)
 		      }
 		})
@@ -20,8 +20,8 @@ function getComments(){
 
 function countLOLs(){
 	console.log(5)
-	for (i =0; i<posts_data.length; i++){
-		var str =posts_data[i].toLowerCase()
+	for (i =0; i<posts.length; i++){
+		var str =posts[i]["story"].toLowerCase()
 		if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
 			FacebookLOL++
 		}
@@ -43,8 +43,7 @@ function getPost(nextpage){
 	FB.api(nextpage, function(response){
 		console.log(3)
 		console.log(response)
-    	posts_id = posts_id.concat(response.data.id);
-    	posts_data = posts_data.concat(response.data.story);
+    	posts=posts.concat(response.data.id);
 	});
             	
 }
@@ -66,8 +65,7 @@ function facebookAnalysis(){
 
 		if (response && !response.error) {
 	        //console.log(response)
-	        posts_data=response.data.story
-	        posts_id=response.data.id
+	        posts=posts.concat(response.data)
 	      	var i =0
 	      	while(i < 2){
             	nextpage = response.paging.next;
