@@ -75,7 +75,7 @@ function facebookAnalysis(){
             	getPost(nextpage)
             	i++;
     		}
-    		getComments();
+    		// getComments();
     		countLOLs();
 		}
 	});
