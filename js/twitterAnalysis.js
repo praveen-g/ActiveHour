@@ -2,7 +2,7 @@ var tweets=[]
 var TwitterLOL=0
 
 function countLOLs(){
-
+  console.log(2)
   for (k =0; k<tweets.length; k++){
 
     var str3 =tweets[k]["text"]
@@ -19,6 +19,7 @@ function countLOLs(){
 }
 
 function twitterAnalysis(){
+  console.log(1)
   cb.__call(
       "statuses_userTimeline",
       {"count": 180},
