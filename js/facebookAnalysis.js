@@ -55,8 +55,8 @@ function getComments(){
 	console.log(5)
 
 	for(j=0;j<url.length;j++){
-
-		comments=comments.concat(commentAPICall(url[j]))
+		var arr = commentAPICall(url[j])
+		comments=comments.concat(arr)
 		
 	}
 
