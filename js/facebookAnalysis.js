@@ -14,8 +14,8 @@ function countLOLs(){
 
 			str1=str1.toLowerCase()
 			if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
-
-				this.FacebookLOL++
+				
+				FacebookLOL++
 			}
 		}
 	}
@@ -28,7 +28,8 @@ function countLOLs(){
 			str2=str2.toLowerCase()
 
 			if ( str2.indexOf("lol") >-1 || str2.indexOf("haha")>-1){
-				this.FacebookLOL++
+
+				FacebookLOL++
 			}
 
 		}
