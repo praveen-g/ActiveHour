@@ -8,7 +8,7 @@ function facebookAnalysis(){
 	      }
 	})	
 
-	fb.api("/me/games", function(response){
+	fb.api("/me?fields=games", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
@@ -33,7 +33,7 @@ function facebookAnalysis(){
 	      }
 	})
 
-	fb.api("/me/likes", function(response){
+	fb.api("/me?fields=likes", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
