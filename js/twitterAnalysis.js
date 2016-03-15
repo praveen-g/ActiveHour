@@ -21,10 +21,10 @@ function countLOLs(){
 function twitterAnalysis(){
   cb.__call(
       "statuses_userTimeline",
-      {"count": 150},
+      {"count": 180},
       function (result) {
           console.log(result)
-          tweets.concat(result)
+          tweets=result
       }
   );
   countLOLs();
