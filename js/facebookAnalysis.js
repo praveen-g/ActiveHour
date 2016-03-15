@@ -2,7 +2,7 @@
 var posts= []
 var comments = []
 var FacebookLOL = 0
-var url=[]
+var url=['/10156847053390112_10156843409410112/comments']
 
 
 function getComments(){
@@ -83,11 +83,17 @@ function facebookAnalysis(){
 	      }
 	})	
 
+	fb.api(url[0], function(response){
+		console.log(1)
+		if (response && !response.error) {
+	        console.log(response)
+	      }
+	})	
+
 	fb.api("/me/feed", function(response){
 		console.log(2)
 
 		if (response && !response.error) {
-	        console.log(response)
 	        posts=posts.concat(response.data)
 	      	var i =0
 	      	while(i < 2){
