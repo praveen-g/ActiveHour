@@ -19,7 +19,6 @@ function countLols(){
 }
 
 function twitterAnalysis(){
-  console.log(1)
   cb.__call(
       "statuses_userTimeline",
       {"count": 180},
