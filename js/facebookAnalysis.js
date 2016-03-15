@@ -8,15 +8,21 @@ function facebookAnalysis(){
 	      }
 	})	
 
-	fb.api("/me/posts", function(response){
+	fb.api("/me/feed", function(response){
 		if (response && !response.error) {
 	        console.log(response)
 	      }
 	})
 
-	fb.api("/me/photos", function(response){
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})
+	// fb.api("/me/posts", function(response){
+	// 	if (response && !response.error) {
+	//         console.log(response)
+	//       }
+	// })
+
+	// fb.api("/me/photos", function(response){
+	// 	if (response && !response.error) {
+	//         console.log(response)
+	//       }
+	// })
 };
