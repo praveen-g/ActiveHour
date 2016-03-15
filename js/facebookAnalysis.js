@@ -24,8 +24,7 @@ function countLOLs(){
 	}
 	for (l =0; l<comments.length; l++){
 
-		var str2 =comments[l]["data"]["message"]
-		console.log(str2)
+		var str2 =comments[l]["message"]
 
 		if (str2!=null){
 
