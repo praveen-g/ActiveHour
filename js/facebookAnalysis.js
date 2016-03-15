@@ -38,19 +38,23 @@ function countLOLs(){
 		}
 	}
 }
+function commentAPICall(val){
 
-function getComments(){
-	console.log(5)
-
-	for(j=0;j<url.length;j++){
-
-		fb.api(url[j], function(response){
+	fb.api(val, function(response){
 
 		if (response && !response.error) {
 	        console.log(response)
 	        comments=comments.concat(response.data)
 	      }
 		})
+}
+
+function getComments(){
+	console.log(5)
+
+	for(j=0;j<url.length;j++){
+
+		commentAPICall(url[j])
 		
 	}
 
