@@ -12,7 +12,7 @@ function countLOLs(){
       str1=str1.toLowerCase()
       if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
 
-        FacebookLOL++
+        TwitterLOL++
       }
     }
   }
@@ -21,10 +21,10 @@ function countLOLs(){
 function twitterAnalysis(){
   cb.__call(
       "statuses_userTimeline",
-      {"count": 150},
+      {"count": 180},
       function (result) {
           console.log(result)
-          tweet.concat(result)
+          tweets=result
       }
   );
   countLOLs();
