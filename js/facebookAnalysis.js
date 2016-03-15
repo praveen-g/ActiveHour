@@ -7,7 +7,7 @@ function getComments(){
 	console.log(4)
 	for(i=0;i<posts.length;i++){
 
-		fb.api("/"+posts[i].id+"/comments", function(response){
+		fb.api("/"+posts[i]["id"]+"/comments", function(response){
 			if (response && !response.error) {
 				console.log(response)
 		        comments.concat(response.data)
@@ -21,7 +21,9 @@ function getComments(){
 function countLOLs(){
 	console.log(5)
 	for (i =0; i<posts.length; i++){
-		var str =posts[i].story.toLowerCase()
+
+
+		var str =posts[i].["story"].toLowerCase()
 		if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
 			FacebookLOL++
 		}
