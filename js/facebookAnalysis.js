@@ -42,16 +42,16 @@ function countLOLs(){
 
 function getComments(){
 	
-	for(m=0;m<1;m++){
+	//for(m=0;m<posts.length;m++){
 		console.log(4)
-		fb.api("/"+posts[m]["id"]+"/comments?", function(response){
+		fb.api("/"+posts[1]["id"]+"/comments?", function(response){
 		console.log(5.5)
 		if (response && !response.error) {
 	        console.log(response)
 	        comments=comments.concat(response.data)
 	      }
 		});
-	}
+	//}
 }
 
 
