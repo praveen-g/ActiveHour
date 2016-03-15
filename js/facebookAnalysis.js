@@ -38,15 +38,16 @@ function countLOLs(){
 		}
 	}
 }
+
 function commentAPICall(val){
 
-	fb.api("/me", function(response){
+	fb.api(val, function(response){
 		console.log(5.5)
 		if (response && !response.error) {
 	        console.log(response)
 	        comments=comments.concat(response.data)
 	      }
-		})
+	});
 }
 
 function getComments(){
@@ -63,8 +64,13 @@ function getComments(){
 function formUrls(){
 	console.log(4)
 	for(m=0;m<posts.length;m++){
-		var str="/"+posts[m]["id"]+"/comments?redirect=0"
-		url=url.concat(str)
+		fb.api("/"+posts[m]["id"]+"/comments?", function(response){
+		console.log(5.5)
+		if (response && !response.error) {
+	        console.log(response)
+	        comments=comments.concat(response.data)
+	      }
+		});
 	}
 }
 
