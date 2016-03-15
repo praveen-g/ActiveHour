@@ -5,7 +5,7 @@ var comments = []
 var FacebookLOL = 0
 
 function getComments(){
-
+	console.log(4)
 	for(i=0;i<posts_id.length;i++){
 
 		fb.api("/"+posts_id[i]+"/comments", function(response){
@@ -19,7 +19,7 @@ function getComments(){
 
 
 function countLOLs(){
-
+	console.log(5)
 	for (i =0; i<posts_data.length; i++){
 		var str =posts_data[i].toLowerCase()
 		if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
@@ -38,6 +38,16 @@ function countLOLs(){
 
 }
 
+function getPost(nextpage){
+	console.log(3)
+	FB.api(nextpage, function(response){
+		console.log(3)
+		console.log(response)
+    	posts_id = posts_id.concat(response.data.id);
+    	posts_data = posts_data.concat(response.data.story);
+	});
+            	
+}
 
 
 
@@ -45,12 +55,14 @@ function countLOLs(){
 function facebookAnalysis(){
 
 	fb.api("/me", function(response){
+		console.log(1)
 		if (response && !response.error) {
 	        console.log(response)
 	      }
 	})	
 
 	fb.api("/me/feed", function(response){
+		console.log(2)
 
 		if (response && !response.error) {
 	        //console.log(response)
@@ -59,11 +71,7 @@ function facebookAnalysis(){
 	      	var i =0
 	      	while(i < 2){
             	nextpage = response.paging.next;
-            	FB.api(nextpage, function(response){
-            		console.log(response)
-                	posts_id = posts_id.concat(response.data.id);
-                	posts_data = posts_data.concat(response.data.story);
-            	});
+            	getPost(nextpage)
             	i++;
     		}
     		getComments();
