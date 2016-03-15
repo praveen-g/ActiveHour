@@ -1,23 +1,33 @@
 var tweets=[]
+var TwitterLOL=0
+
+function countLOLs(){
+
+  for (k =0; k<tweets.length; k++){
+
+    var str1 =tweets[k]["text"]
+
+    if (str1!=null){
+
+      str1=str1.toLowerCase()
+      if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
+
+        FacebookLOL++
+      }
+    }
+  }
+}
 
 function twitterAnalysis(){
   cb.__call(
-      "statuses_user_timeline",
-      {},
+      "statuses_userTimeline",
+      {"count": 150},
       function (result) {
           console.log(result)
-          var nextCursor = result.next_cursor_str;
-          if (nextCursor > 0 && nextCursor<2) {
-          cb.__call(
-              "followers_list",
-              {cursor: nextCursor},
-              function (result2) {
-                  console.log(result2)
-              }
-          );
-      }
+          tweet.concat(result)
       }
   );
+  countLOLs();
 }
 
 

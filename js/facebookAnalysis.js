@@ -94,7 +94,7 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 	        posts=posts.concat(response.data)
 	      	var i =0
-	      	while(i < 2){
+	      	while(i < 4){
             	nextpage = response.paging.next;
             	getPost(nextpage)
             	i++;
