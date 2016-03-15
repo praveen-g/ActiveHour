@@ -6,7 +6,7 @@ var url=[]
 
 
 function getComments(){
-	console.log(4)
+	console.log(5)
 
 	for(j=0;j<url.length;j++){
 		
@@ -22,14 +22,15 @@ function getComments(){
 }
 
 function formUrls(){
-
+	console.log(4)
 	for(m=0;m<posts.length;m++){
-		url=url.concat("/"+posts[m]["id"]+"/comments")
+		var str="/"+posts[m]["id"]+"/comments"
+		url=url.concat(str)
 	}
 }
 
 function countLOLs(){
-	console.log(5)
+	console.log(6)
 	for (k =0; k<posts.length; k++){
 
 		var str1 =posts[k]["message"]
