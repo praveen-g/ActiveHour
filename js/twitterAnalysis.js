@@ -4,7 +4,7 @@ var TwitterLOL=0
 function countLols(){
 
   for (var k=0; k<tweets.length; k++){
-    console.log(tweets[k])
+    var tweetText = tweets[k]["text"]
   }
 }
 
