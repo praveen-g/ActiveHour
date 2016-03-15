@@ -24,7 +24,7 @@ function twitterAnalysis(){
       {"count": 150},
       function (result) {
           console.log(result)
-          tweet.concat(result)
+          tweets.concat(result)
       }
   );
   countLOLs();
