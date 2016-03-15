@@ -39,31 +39,11 @@ function countLOLs(){
 	}
 }
 
-function commentAPICall(val){
-
-	fb.api(val, function(response){
-		console.log(5.5)
-		if (response && !response.error) {
-	        console.log(response)
-	        comments=comments.concat(response.data)
-	      }
-	});
-}
-
-function getComments(){
-	console.log(5)
-
-	for(j=0;j<url.length;j++){
-
-		commentAPICall(url[j])
-		
-	}
-
-}
 
 function formUrls(){
-	console.log(4)
+	
 	for(m=0;m<posts.length;m++){
+		console.log(4)
 		fb.api("/"+posts[m]["id"]+"/comments?", function(response){
 		console.log(5.5)
 		if (response && !response.error) {
@@ -108,7 +88,6 @@ function facebookAnalysis(){
             	i++;
     		}
     		formUrls();
-    		getComments();
     		countLOLs();
 		}
 	});
