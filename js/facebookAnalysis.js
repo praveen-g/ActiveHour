@@ -10,7 +10,7 @@ function getComments(){
 		fb.api(url, function(response){
 			if (response && !response.error) {
 				console.log(response)
-		        comments.concat(response.data)
+		        comments=comments.concat(response.data)
 		      }
 		})
 	}
@@ -29,7 +29,7 @@ function countLOLs(){
 
 	}
 	for (i =0; i<comments.length; i++){
-		var str =comments[i].toLowerCase()
+		var str =comments[i]["data"]["message"].toLowerCase()
 		if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
 			FacebookLOL++
 		}
