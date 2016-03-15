@@ -3,12 +3,10 @@ var posts= []
 var comments = []
 var FacebookLOL = 0
 
-function getComments(){
-	console.log(4)
-	console.log(posts.length)
-	for(j=0;j<posts.length;j++){
-		var url = "/"+posts[j]["id"]+"/comments"
-		fb.api(url, function(response){
+
+function commentApiCall(url){
+	console.log(5)
+	fb.api(url, function(response){
 			console.log(response)
 
 			if (response && !response.error) {
@@ -16,13 +14,21 @@ function getComments(){
 		        comments=comments.concat(response)
 		      }
 		})
+}
+function getComments(){
+	console.log(4)
+	console.log(posts.length)
+	for(j=0;j<posts.length;j++){
+		var url = "/"+posts[j]["id"]+"/comments"
+		commentApiCall(url)
+		
 	}
 
 }
 
 
 function countLOLs(){
-	console.log(5)
+	console.log(6)
 	for (k =0; k<posts.length; k++){
 
 		var str1 =posts[k]["message"]
