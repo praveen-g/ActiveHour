@@ -10,7 +10,7 @@ function getComments(){
 		fb.api("/"+posts[i].id+"/comments", function(response){
 			if (response && !response.error) {
 				console.log(response)
-		        comments.concat(response.message)
+		        comments.concat(response.data)
 		      }
 		})
 	}
