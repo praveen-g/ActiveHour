@@ -11,7 +11,8 @@ function getAccessToken(){
 	console.log(document.location.hash);
 	
 	instagram_access_token = document.location.hash
-	console.log(instagram_access_token);
+    alert(instagram_access_token.split("=").pop());
+    console.log(instagram_access_token);
 	flag=true;
 }
 window.onload = getAccessToken();
