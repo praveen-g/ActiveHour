@@ -5,12 +5,13 @@ function countLOLs(){
 
   for (k =0; k<tweets.length; k++){
 
-    var str1 =tweets[k]["text"]
+    var str3 =tweets[k]["text"]
+    console.log(str1)
 
-    if (str1!=null){
+    if (str3!=null){
 
-      str1=str1.toLowerCase()
-      if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
+      str3=str3.toLowerCase()
+      if ( str3.indexOf("lol") >-1 || str3.indexOf("haha")>-1){
 
         TwitterLOL++
       }
@@ -23,7 +24,6 @@ function twitterAnalysis(){
       "statuses_userTimeline",
       {"count": 180},
       function (result) {
-          console.log(result)
           tweets=result
       }
   );

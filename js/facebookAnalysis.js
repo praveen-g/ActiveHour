@@ -30,7 +30,7 @@ function countLOLs(){
 
 			str2=str2.toLowerCase()
 
-			if ( str.indexOf("lol") >-1 || str.indexOf("haha")>-1){
+			if ( str2.indexOf("lol") >-1 || str2.indexOf("haha")>-1){
 				FacebookLOL++
 			}
 
@@ -94,7 +94,7 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 	        posts=posts.concat(response.data)
 	      	var i =0
-	      	while(i < 4){
+	      	while(i < 6){
             	nextpage = response.paging.next;
             	getPost(nextpage)
             	i++;
