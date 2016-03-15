@@ -6,13 +6,12 @@ function countLOLs(){
   for (k =0; k<tweets.length; k++){
 
     var str3 =tweets[k]["text"]
-    console.log(str1)
+    console.log(str3)
 
     if (str3!=null){
 
       str3=str3.toLowerCase()
       if ( str3.indexOf("lol") >-1 || str3.indexOf("haha")>-1){
-
         TwitterLOL++
       }
     }
