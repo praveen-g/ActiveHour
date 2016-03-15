@@ -21,6 +21,12 @@ function getComments(){
 
 }
 
+function formUrls(){
+
+	for(m=0;m<posts.length;m++){
+		url=url.concat("/"+posts[m]["id"]+"/comments")
+	}
+}
 
 function countLOLs(){
 	console.log(5)
@@ -59,7 +65,7 @@ function getPost(nextpage){
 	console.log(3)
 	FB.api(nextpage, function(response){
     	posts=posts.concat(response.data);
-    	url=url.concat("/"+response.data.id+"/comments")
+    	
 	});
             	
 }
@@ -80,15 +86,15 @@ function facebookAnalysis(){
 		console.log(2)
 
 		if (response && !response.error) {
-	        //console.log(response)
+	        console.log(response)
 	        posts=posts.concat(response.data)
-	        url=url.concat("/"+response.data.id+"/comments")
 	      	var i =0
 	      	while(i < 2){
             	nextpage = response.paging.next;
             	getPost(nextpage)
             	i++;
     		}
+    		formUrls();
     		getComments();
     		countLOLs();
 		}
