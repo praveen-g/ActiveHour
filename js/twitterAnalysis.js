@@ -1,23 +1,24 @@
 var tweets=[]
 
-cb.__call(
-    "statuses_user_timeline",
-    {},
-    function (result) {
-        console.log(result)
-        var nextCursor = result.next_cursor_str;
-        if (nextCursor > 0 && nextCursor<2) {
-        cb.__call(
-            "followers_list",
-            {cursor: nextCursor},
-            function (result2) {
-                // ...
-            }
-        );
-    }
-    }
-);
-
+function twitterAnalysis(){
+  cb.__call(
+      "statuses_user_timeline",
+      {},
+      function (result) {
+          console.log(result)
+          var nextCursor = result.next_cursor_str;
+          if (nextCursor > 0 && nextCursor<2) {
+          cb.__call(
+              "followers_list",
+              {cursor: nextCursor},
+              function (result2) {
+                  console.log(result2)
+              }
+          );
+      }
+      }
+  );
+}
 
 
 
