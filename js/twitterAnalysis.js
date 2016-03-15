@@ -12,7 +12,7 @@ function countLOLs(){
       str1=str1.toLowerCase()
       if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
 
-        FacebookLOL++
+        TwitterLOL++
       }
     }
   }
