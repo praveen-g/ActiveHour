@@ -59,7 +59,7 @@ function getComments(){
 function formUrls(){
 	console.log(4)
 	for(m=0;m<posts.length;m++){
-		var str="/"+posts[m]["id"]+"/comments"
+		var str="/"+posts[m]["id"]+"/comments?redirect=0"
 		url=url.concat(str)
 	}
 }
