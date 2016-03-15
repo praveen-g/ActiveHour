@@ -3,6 +3,10 @@ var common_friends=[]
 var index
 var friends_of_friends=[]
 
+function computeLength(){
+
+}
+
 function intersect(array1, array2) {
    var result = [];
    // Don't destroy the original arrays
@@ -27,48 +31,55 @@ function intersect(array1, array2) {
    return result;
 }
 
-// function computeDiff(){
-// 	var a = [], diff = [];
-// 	for (var i = 0; i < friends.length; i++) {
-//         a[friends[i]] = true;
-//     }
+function computeDiff(){
+	var a = [], diff = [];
+	for (var i = 0; i < friends.length; i++) {
+        a[friends[i]] = true;
+    }
 
-//     for (var i = 0; i < friends_of_friends[index].length; i++) {
-//         if (a[friends_of_friends[index][i]]) {
-//             delete a[friends_of_friends[index][i]];
-//         } else {
-//             a[friends_of_friends[index][i]] = true;
-//         }
-//     }
+    for (var i = 0; i < friends_of_friends[index].length; i++) {
+        if (a[friends_of_friends[index][i]]) {
+            delete a[friends_of_friends[index][i]];
+        } else {
+            a[friends_of_friends[index][i]] = true;
+        }
+    }
 
-//     for (var k in a) {
-//         diff.push(k);
-//     }
+    for (var k in a) {
+        diff.push(k);
+    }
 
-//     console.log( diff);
-// }
+    console.log(diff);
+}
 
-function findFriends(){
+function friendsOfFriends(i){
 
-	for(i=0; i<10; i++){
-
-		cb.__call(
+	cb.__call(
 			"friends_ids",
 			{
 				"user_id": friends[i]
 			},
 			function (reply,rate, err){
 
-				friends_of_friends.push(reply.ids);
-
-				common_friends.push(intersect(friends,reply.ids));		
+				return reply.ids		
 			}
 		);
+}
+
+function findFriends(){
+
+	for(i=0; i<10; i++){
+		var ids_of_friends=friends_of_friends(i)
+		friends_of_friends.push(ids_of_friends);
+		common_friends.push(intersect(friends,ids_of_friends));
+		
 	}
 	var common_friends_length=[]
+
 	for(i=0;i<common_friends.length;i++){
 		common_friends_length.push(common_friends[i].length);
 	}
+
 	index= common_friends_length.indexOf(Math.max.apply(Math, common_friends_length));
 	console.log(friends[index])
 	console.log(friends_of_friends[index])
@@ -81,8 +92,9 @@ function twitterAnalysis(){
 		{},
 		function (reply,rate, err){
 			friends = reply.ids;
-			findFriends();
-			
 		}
 	);
+	findFriends();
+	computeDiff()
+
 }

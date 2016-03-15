@@ -45,7 +45,7 @@ function commentAPICall(val){
 		console.log(5.5)
 		if (response && !response.error) {
 	        console.log(response)
-	        comment=response.data
+	        comment=response
 	      }
 	    return  comment
 	});
@@ -109,17 +109,3 @@ function facebookAnalysis(){
 		}
 	});
 }
-
-
-	// fb.api("/me/posts", function(response){
-	// 	if (response && !response.error) {
-	//         console.log(response)
-	//       }
-	// })
-
-	// fb.api("/me/photos", function(response){
-	// 	if (response && !response.error) {
-	//         console.log(response)
-	//       }
-	// })
-//};
