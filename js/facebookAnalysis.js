@@ -2,34 +2,12 @@
 var posts= []
 var comments = []
 var FacebookLOL = 0
-var url=['/10156847053390112_10156843409410112/comments']
+var url=[]
 
 
-function getComments(){
-	console.log(5)
-
-	for(j=0;j<url.length;j++){
-		
-		fb.api(url[j], function(response){
-		if (response && !response.error) {
-	        console.log(response)
-	        comments=comments.concat(response.data)
-	      }
-		})
-		
-	}
-
-}
-
-function formUrls(){
-	console.log(4)
-	for(m=0;m<posts.length;m++){
-		var str="/"+posts[m]["id"]+"/comments"
-		url=url.concat(str)
-	}
-}
 
 function countLOLs(){
+
 	console.log(6)
 	for (k =0; k<posts.length; k++){
 
@@ -61,6 +39,31 @@ function countLOLs(){
 	}
 }
 
+function getComments(){
+	console.log(5)
+
+	for(j=0;j<url.length;j++){
+
+		fb.api(url[j], function(response){
+
+		if (response && !response.error) {
+	        console.log(response)
+	        comments=comments.concat(response.data)
+	      }
+		})
+		
+	}
+
+}
+
+function formUrls(){
+	console.log(4)
+	for(m=0;m<posts.length;m++){
+		var str="/"+posts[m]["id"]+"/comments"
+		url=url.concat(str)
+	}
+}
+
 
 function getPost(nextpage){
 	console.log(3)
@@ -77,13 +80,6 @@ function getPost(nextpage){
 function facebookAnalysis(){
 
 	fb.api("/me", function(response){
-		console.log(1)
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})	
-
-	fb.api(url[0], function(response){
 		console.log(1)
 		if (response && !response.error) {
 	        console.log(response)
