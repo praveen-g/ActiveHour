@@ -42,7 +42,7 @@ function countLOLs(){
 
 function getComments(){
 	
-	//for(m=0;m<posts.length;m++){
+	for(m=0;m<posts.length;m++){
 		console.log(4)
 		fb.api("/"+posts[14]["id"]+"/comments?", function(response){
 		console.log(5.5)
@@ -51,7 +51,7 @@ function getComments(){
 	        comments=comments.concat(response.data)
 	      }
 		});
-	//}
+	}
 }
 
 
