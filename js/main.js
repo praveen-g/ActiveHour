@@ -2,23 +2,13 @@ var mainDict=[]
 var sentimentScores = []
 var sentiment
 
-function sentimentAnalysis(socialObject){
-    console.log(socialObject)
-    // require(['sentiment'], function (sentiment) {
-    var messageScore   = analyze(socialObject["text"])
-    // });
-
-    return sentimentAndTime = {
-        "sentiment": messageScore, "time": socialObject["time"]
-    }
-}
 
 function createDict(){
 
-    for (var i = 0; i<twitterDict.length; i++) {
-
-        sentimentScores = sentimentScores.push(sentimentAnalysis(twitterDict[i]))
-    }
+    mainDict.forEach(function(obj,index){
+        var messageScore = analyze(obj.["text"])
+        sentimentScores.push({"sentiment": messageScore, "time": socialObject["time"]})
+    })
 
 }
 
@@ -26,6 +16,9 @@ function getDict(){
     console.log("in dict")
    console.log(FacebookDict)
    console.log(twitterDict)
+   mainDict=FacebookDict.concat(twitterDict);
+   createDict()
+
 }
 
 function startAnalysing(){
