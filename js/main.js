@@ -13,9 +13,7 @@ function createDict(){
 }
 
 function getDict(){
-    console.log("in dict")
-   console.log(FacebookDict)
-   console.log(twitterDict)
+
    mainDict=twitterDict.concat(FacebookDict);
    createDict()
 
@@ -25,5 +23,6 @@ function startAnalysing(){
     console.log("in analyze")
     facebookAnalysis();
     twitterAnalysis();
+    getDict();
 
 }
