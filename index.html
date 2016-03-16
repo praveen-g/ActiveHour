@@ -6,6 +6,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <script type="text/javascript" src="node_modules/codebird/codebird.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+  <script type="text/javascript" src="chart.js"></script>
   <script src= "node_modules/Sentimental/lib/sentimental.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   
@@ -46,11 +47,12 @@
     <button class="btn btn-md btn-primary active" onclick="startAnalysing();" style="width: 80%;">Analyze</button>
     </div> 
     <button class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">View Results</button>
+
+    <div id="score" style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;"></div>
+
+    <button class="btn btn-md btn-primary active" onclick="showgraph()" style="width: 80%; padding-left: ">Show Graph</button>
+    
   </div>
-
-  <div id="score" style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;"></div>
-
-  <button class="btn btn-md btn-primary active" onclick="showgraph()" style="width: 80%;">Show Graph</button>
 
   <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 10%"></canvas>
 
