@@ -81,5 +81,5 @@ function facebookAnalysis(){
     		createDict(comments);
 		}
 	});
-	return 2
+	return facebookMessages
 }
