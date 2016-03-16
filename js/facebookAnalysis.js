@@ -39,28 +39,41 @@ function createPostsDictionary(){
 			{
 				case "01":
 					posts[p]["created_time"] = "Jan"
+					break
 				case "02":
 					posts[p]["created_time"] = "Feb"
+					break
 				case "03":
 					posts[p]["created_time"] = "Mar"
+					break
 				case "04":
 					posts[p]["created_time"] = "Apr"
+					break
 				case "05":
 					posts[p]["created_time"] = "May"
+					break
 				case "06":
 					posts[p]["created_time"] = "Jun"
+					break
 				case "07":
 					posts[p]["created_time"] = "Jul"
+					break
 				case "08":
 					posts[p]["created_time"] = "Aug"
+					break
 				case "09":
 					posts[p]["created_time"] = "Sep"
+					break
 				case "10":
 					posts[p]["created_time"] = "Oct"
+					break
 				case "11":
 					posts[p]["created_time"] = "Nov"
+					break
 				case "12":
 					posts[p]["created_time"] = "Dec"
+					break
+
 			}
 			 var obj = {
 			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
