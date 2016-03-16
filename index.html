@@ -22,6 +22,7 @@
   <h1 style="font-family: 'Futura';font-size: 4vw; color:'#333333'; text-align: center;">Social Media Sentiment Tracker</h1>
   <h2 style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;">Our program asks users to connect their Facebook, and Twitter accounts and queries recent posts, media, and tweets and performs a sentiment analysis on their content. The analysis generates a positivity or negativity score on the text component of their content and displays a chart showing their sentiment over the period of time that the sample data is extracted in</h2>
   
+  <div style=" padding-top: 10%;">
   <div id="facebookLoginButton">
 
     <fb:login-button scope="public_profile,email,user_friends,user_posts,user_photos" onlogin="checkLoginState();" style="width: 80%"></fb:login-button>
@@ -29,7 +30,7 @@
 
   <button onclick="changeURL();" type="button" class="btn btn-md btn-primary active" id ="instagramLoginButton" style="width: 80%;">Login to Instagram</button>
 
-  <div style=" padding-top: 10%;">
+  
 
     <button id = "twitterLoginButton" type="button" class="btn btn-md btn-primary active" onclick="twitterAuthorize();" style="width: 80%;"> Login to Twitter</button><br><br>
 
@@ -38,9 +39,6 @@
 
     <input id = "submitButton" type="button" onclick="getTwitterAccessToken();" value="Submit"></input>
     </div>
-  </div>
-
-  <div style="padding-top: 10%; padding-left: 10% padding-bottom: 10%">
 
     <button class="btn btn-md btn-primary active" onclick="startAnalysing();" style="width: 80%;">Analyze</button> 
     <button class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">View Results</button>
