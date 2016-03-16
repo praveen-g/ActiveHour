@@ -6,8 +6,8 @@ function countLols(){
 
     var tweetText= tweets[t]
 
-    if(tweetText){
-
+    if(tweetText["text"]){
+      consol.log(tweetText["text"])
       var obj3={
         "text":tweetText["text"], "time": tweetText["created_at"]
       }
