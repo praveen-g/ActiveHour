@@ -1,10 +1,7 @@
 var tweets=[]
+var twitterMessages=[]
 
 function countLols(){
-  
-  var twitterMessages=[]
-
-  console.log(9)
   for (var k=0; k<tweets.length; k++){
 
     var tweetText= tweets[k]["text"]
@@ -18,11 +15,10 @@ function countLols(){
       twitterMessages= twitterMessages.concat(obj)
     }   
   }
-  return twitterMessages
 }
 
 function twitterAnalysis(){
-  var twitterMessages=[]
+  
   console.log(8)
   cb.__call(
       "statuses_userTimeline",
@@ -33,6 +29,4 @@ function twitterAnalysis(){
           twitterMessages= countLols();
       }
   );
-  return twitterMessages
-  
 }

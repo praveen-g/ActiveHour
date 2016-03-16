@@ -3,12 +3,13 @@ var posts= []
 var comments = []
 var FacebookLOL = 0
 var url=[]
-
+var FacebookDict=[]
+var postsDict=[]
+var commentsDict=[]
 
 var id=""
 
 function createDict(data){
-	var facebookMessages=[]
 
 	for (x in data){
 		console.log(x)
@@ -66,19 +67,22 @@ function getPost(nextpage){
 
 
 function facebookAnalysis(){
-	var postsDict=[]
-	var commentsDict=[]
+
 	fb.api("/me/feed", function(response){
 
 
 		if (response && !response.error) {
+
 	        posts=posts.concat(response.data)
+
 	      	var i =0
 	      	while(i < 8){
+
             	nextpage = response.paging.next;
             	getPost(nextpage)
             	i++;
     		}
+
     		formUrls();
     		getComments();
     		postsDict=createDict(posts);

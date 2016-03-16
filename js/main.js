@@ -36,9 +36,10 @@ function getDict(){
 }
 
 function startAnalysing(){
-
-    getDict();
-    //var insta = instagramAnalysis();
-    createDict(facebookMessages,twitterMessages)
+    facebookAnalysis();
+    twitterAnalysis();
+    // getDict();
+    // //var insta = instagramAnalysis();
+    // createDict(facebookMessages,twitterMessages)
 
 }
