@@ -12,10 +12,10 @@ var sentiment
 function sentimentAnalysis(socialObject){
     var messageScore 
 
-    require(['foo'], function (foo) {
+    require(['sentiment'], function (sentiment) {
         messageScore   = sentiment(socialObject["text"])
     });
-    
+
     return sentimentAndTime = {
         "sentiment": messageScore, "time": socialObject["time"]
     }
