@@ -10,17 +10,16 @@ var commentsDict=[]
 var id=""
 
 function createCommentsDictionary(){
-	 console.log("comment")
+	 console.log(comments.length)
 
 	for (var c =0;c<comments.length;c++){
 		console.log(c)
 
-		var str2 =comments[c]["message"]
 
-		if (str2!=null){
+		if (comments[c]["message"]!=null){
 
 			 var obj2 = {
-			 	"text":str2, "time": comments[c]["created_time"]
+			 	"text":comments[c]["message"], "time": comments[c]["created_time"]
 			 }
 			 FacebookDict=FacebookDict.concat(obj2)
 		} 
@@ -28,16 +27,15 @@ function createCommentsDictionary(){
 }
 
 function createPostsDictionary(){
-	console.log("post")
+	console.log(posts.length)
+
 	for (var p=0;p<posts.length;p++){
 		console.log(p)
-		
-		var str1 =posts[p]["message"]
 
-		if (str1!=null){
+		if (posts[p]["message"]!=""){
 
 			 var obj = {
-			 	"text":str1, "time": posts[p]["created_time"]
+			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
 			 }
 
 			 console.log(obj)
