@@ -1,6 +1,8 @@
 var mainDict=[]
 var sentimentScores = []
 var sentiment
+
+if (typeof define !== 'function') { var define = require('amdefine')(module) }
 define( function(require){
     sentiment = require('sentiment');
 })
