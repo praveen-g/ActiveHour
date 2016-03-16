@@ -29,7 +29,7 @@ function createDict(){
 		if (str2!=null){
 
 			var obj = {
-			 	"text":str2, "time": posts[k]["created_time"]
+			 	"text":str2, "time": comments[l]["created_time"]
 			 }
 			 facebookMessages.push(obj)
 		}
