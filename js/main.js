@@ -1,10 +1,30 @@
 var mainDict=[]
 var sentimentScores = []
 var sentiment
-var grouping=[]
+window.grouping=[]
+var label=[]
+var positive=[]
+var negative=[]
 
 function arrangeData(){
-  console.log("display")
+  console.log(window.grouping)
+  window.grouping.forEach(function(obj,index){
+    label=label.concat(obj.keys())
+    positive=positive.concat(
+        var total=0
+        $.each(arr,function() {
+            if (this>0)
+              total += this;
+        });        
+      )
+    negative=negative.concat(
+        var total=0
+        $.each(arr,function() {
+            if (this<0)
+              total += this;
+        });
+      )
+  })
 }
 
 function createDict(){
