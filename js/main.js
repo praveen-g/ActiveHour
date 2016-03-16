@@ -29,6 +29,9 @@ function getDict(){
 
 function startAnalysing(){
     facebookAnalysis();
+    var urlCall = formUrls();
+    var commentCall= getComments();
+    var postCall=createPostsDictionary();
     twitterAnalysis();
     // getDict();
     // //var insta = instagramAnalysis();

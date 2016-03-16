@@ -99,9 +99,6 @@ function facebookAnalysis(){
             	i++;
     		}
 
-    		var urlCall = formUrls();
-    		var commentCall= getComments();
-    		var postCall=createPostsDictionary();
 		}
 	});
 
