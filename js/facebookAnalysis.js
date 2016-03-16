@@ -8,14 +8,14 @@ var facebookMessages=[]
 var id=""
 
 function createDict(data){
-	for (k =0; k<data.length; k++){
+	for (x in data){
 		
-		var str1 =data[k]["message"]
+		var str1 =x["message"]
 
 		if (str1!=null){
 
 			 var obj = {
-			 	"text":str1, "time": data[k]["created_time"]
+			 	"text":str1, "time": x["created_time"]
 			 }
 			 facebookMessages.push(obj)
 		}
