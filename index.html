@@ -23,20 +23,30 @@
   <h2 style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;">Our program asks users to connect their Facebook, and Twitter accounts and queries recent posts, media, and tweets and performs a sentiment analysis on their content. The analysis generates a positivity or negativity score on the text component of their content and displays a chart showing their sentiment over the period of time that the sample data is extracted in</h2>
   
   <div id="facebookLoginButton" style="width: 30%">
-  <fb:login-button scope="public_profile,email,user_friends,user_posts,user_photos" onlogin="checkLoginState();"></fb:login-button>
+
+    <fb:login-button scope="public_profile,email,user_friends,user_posts,user_photos" onlogin="checkLoginState();"></fb:login-button>
   </div>
+
   <button onclick="changeURL();" type="button" class="btn btn-md btn-primary active" id ="instagramLoginButton" disabled>Login to Instagram</button>
+
   <div style="padding-top: 10%; align-content: center;width: 100%">
+
     <button id = "twitterLoginButton" type="button" class="btn btn-md btn-primary active" onclick="twitterAuthorize();" syle> Login to Twitter</button><br><br>
-    <input id = "PINFIELD" placeholder="" style="width:50%"></input>
+
+    <input id = "PINFIELD" placeholder="" style="width:30px; padding-top: 10%"></input>
+    
     <input id = "submitButton" type="button" onclick="getTwitterAccessToken();" value="Submit"></input>
   </div>
-<div style="padding-top: 10%; align-content: center;width: 100%">
-  <button class="btn btn-md btn-primary active" onclick="startAnalysing();" >Run Analysis</button> 
-  <button class="btn btn-md btn-primary active" onclick="getDict()">Show Results</button>
-</div>
-<canvas id="myChart" width="400" height="400"></canvas>
+
+  <div style="padding-top: 10%; align-content: center;width: 100%">
+    <button class="btn btn-md btn-primary active" onclick="startAnalysing();" >Run Analysis</button> 
+    <button class="btn btn-md btn-primary active" onclick="getDict()">Show Results</button>
+  </div>
+
+  <canvas id="myChart" width="400" height="400"></canvas>
 
 </body>
+
 <script type="text/javascript" src="chart.js"></script>
+
 </html> 
