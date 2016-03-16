@@ -5,6 +5,26 @@ window.grouping=[]
 var label=[]
 var datapoints=[]
 
+function showGraph(){
+    var data = {
+        labels: window.label,
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: window.datapoints
+            }
+        ]
+    };
+
+    var myLineChart = new Chart(ctx).Line(data);
+}
+
 function arrangeData(){
   label=Object.keys(grouping)
   label.forEach(function(arr, index){

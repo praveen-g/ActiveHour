@@ -53,9 +53,11 @@
   </div>
 
   <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 10%"></canvas>
-  
-  <script type="text/javascript" src="chart.js"></script>
-  <button class="btn btn-md btn-primary active" onclick="showgraph()" style="width: 80%; padding-left: ">Show Graph</button>
+
+  <script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+  </script>
+  <button class="btn btn-md btn-primary active" onclick="showgraph();" style="width: 80%; padding-left: ">Show Graph</button>
 </body>
 
 
