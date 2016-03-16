@@ -10,7 +10,7 @@ var sentiment
 
 
 function sentimentAnalysis(socialObject){
-
+    console.log(socialObject)
     // require(['sentiment'], function (sentiment) {
     var messageScore   = analyze(socialObject["text"])
     // });
@@ -20,16 +20,21 @@ function sentimentAnalysis(socialObject){
     }
 }
 
+function createDict(facebookMessages,twitterMessges){
+
+    for (var i = 0; i<facebookMessages.length; i++) {
+
+        sentimentScores = sentimentScores.concat(sentimentAnalysis(mainDict[i]))
+    };
+    return sentimentScores
+}
+
 function startAnalysing(){
 	var facebookMessages = facebookAnalysis();
 	var twitterMessges = twitterAnalysis();
     //var insta = instagramAnalysis();
-    console.log(facebookMessages.length)
-    console.log(twitterMessges.length)
-    mainDict=facebookMessages+twitterMessges
+    
+    var scores = createDict(facebookMessages,twitterMessges)
 
-    for (var i = 0; i<mainDict.length; i++) {
-
-        sentimentScores = sentimentScores.concat(sentimentAnalysis(mainDict[i]))
-    };
+    console.log(scores)
 }
