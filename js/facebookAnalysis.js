@@ -54,6 +54,7 @@ function getPost(nextpage){
 
 	FB.api(nextpage, function(response){
     	posts=posts.concat(response.data);
+    	console.log(posts)
     	
 	});
             	
