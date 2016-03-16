@@ -4,7 +4,7 @@ var sentiment
 
 
 function createDict(){
-
+    console.log("in createDict")
     mainDict.forEach(function(obj,index){
         var messageScore = analyze(obj["text"])
         sentimentScores= sentimentScores.concat({"sentiment": messageScore, "time": obj["time"]})
