@@ -21,8 +21,8 @@ function getDict(){
 
 function startAnalysing(){
     console.log("in analyze")
-    facebookAnalysis();
-    twitterAnalysis();
+    var facebook= facebookAnalysis();
+    var twitter= twitterAnalysis();
     getDict();
 
 }
