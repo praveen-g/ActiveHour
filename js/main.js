@@ -30,12 +30,10 @@ function getDict(){
 
 function startAnalysing(){
 
-    facebookAnalysis();
-    formUrls();
-    getComments();
-    createPostsDictionary();
+    console.log(facebookAnalysis());
+    
     twitterAnalysis();
-    createDict()
+    console.log(createDict());
     // getDict();
     // //var insta = instagramAnalysis();
     // createDict(facebookMessages,twitterMessages)

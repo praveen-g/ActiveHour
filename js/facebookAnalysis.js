@@ -1,7 +1,6 @@
 // FB.api(path, method, params, callback)
 var posts= []
 var comments = []
-var FacebookLOL = 0
 var url=[]
 var FacebookDict=[]
 var postsDict=[]
@@ -9,23 +8,23 @@ var commentsDict=[]
 
 var id=""
 
-function createCommentsDictionary(){
-	 console.log(comments.length)
+// function createCommentsDictionary(){
+// 	 console.log(comments.length)
 
-	for (var c =0;c<comments.length;c++){
-		console.log(c)
+// 	for (var c =0;c<comments.length;c++){
+// 		console.log(c)
 
 
-		if (comments[c]["message"]){
+// 		if (comments[c]["message"]){
 
-			 var obj2 = {
-			 	"text":comments[c]["message"], "time": comments[c]["created_time"]
-			 }
-			 FacebookDict=FacebookDict.concat(obj2)
-		} 
-	}
-	return true
-}
+// 			 var obj2 = {
+// 			 	"text":comments[c]["message"], "time": comments[c]["created_time"]
+// 			 }
+// 			 FacebookDict=FacebookDict.concat(obj2)
+// 		} 
+// 	}
+// 	return true
+// }
 
 
 function createPostsDictionary(){
@@ -45,32 +44,32 @@ function createPostsDictionary(){
 		}
 	}
 
-	var commentsDictionaryCall = createCommentsDictionary()
+	//var commentsDictionaryCall = createCommentsDictionary()
 	return true
 }
 
-function commentAPICall(val){
+// function commentAPICall(val){
 
-	fb.api(val, function(response){
-		if (response && !response.error) {
-	        comments=comments.concat(response["data"])
-	      }
+// 	fb.api(val, function(response){
+// 		if (response && !response.error) {
+// 	        comments=comments.concat(response["data"])
+// 	      }
 	    
-	});
-	return  1
-}
+// 	});
+// 	return  1
+// }
 
-function getComments(){
+// function getComments(){
+// 	console.log(url.length)
+// 	for(j=0;j<url.length;j++){
+// 		var arr = commentAPICall(url[j])
+// 	}
+// 	return true
 
-	for(j=0;j<url.length;j++){
-		var arr = commentAPICall(url[j])
-	}
-	return true
-
-}
+// }
 
 function formUrls(){
-
+	console.log(posts.length)
 	for(m=0;m<posts.length;m++){
 		var str="/"+posts[m]["id"]+"/comments?redirect=0"
 		url=url.concat(str)
@@ -79,12 +78,11 @@ function formUrls(){
 }
 
 function getPosts(nextPage){
-
+	console.log("im getting called")
 	FB.api(nextPage, function(response){
 		posts=posts.concat(response.data);
 		nextPage=response.nextpage
 	});
-	return true
 
 }
 
@@ -98,5 +96,8 @@ function facebookAnalysis(){
 	        var blah= getPosts(nextPage);
 	     }
 	});
-
+	var url = formUrls()
+	var comments=getComments();
+	var postsDict = createPostsDictionary();
+	return FacebookDict
 }

@@ -27,4 +27,5 @@ function twitterAnalysis(){
           twitterMessages= countLols();
       }
   );
+  return twitterDict
 }
