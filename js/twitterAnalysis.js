@@ -2,11 +2,11 @@ var tweets=[]
 var twitterDict=[]
 
 function countLols(){
-  for (var t in tweets){
+  for (var t=0;t<tweets.length;t++){
 
-    var tweetText= t["text"]
+    var tweetText= tweets[t]
 
-    if(tweetText!=""){
+    if(tweetText){
 
       var obj3={
         "text":tweetText, "time": t["created_at"]
