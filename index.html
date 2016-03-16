@@ -45,10 +45,14 @@
     <div style="padding-bottom: 10%">
     <button class="btn btn-md btn-primary active" onclick="startAnalysing();" style="width: 80%;">Analyze</button>
     </div> 
-    <button id = "Showdict "class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">View Results</button>
+    <button class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">View Results</button>
   </div>
 
-  <canvas id="myChart" width="800" height="400" style="padding-top: 10%; padding-left: 10%"></canvas>
+  <div id="score" style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;"></div>
+
+  <button class="btn btn-md btn-primary active" onclick="showgraph()" style="width: 80%;">Show Graph</button>
+
+  <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 10%"></canvas>
 
 </body>
 

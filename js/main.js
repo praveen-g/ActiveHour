@@ -11,6 +11,7 @@ function arrangeData(){
     var sum = ((grouping[arr].reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/grouping[arr].length
     datapoints = datapoints.concat(sum) 
   });
+  document.getElementById("score").innerText = "This month's score is"+datapoints[0];
   console.log(grouping)
   console.log(label)
   console.log(datapoints)
