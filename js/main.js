@@ -54,4 +54,5 @@ function startAnalysing(){
     console.log("in analyze")
     facebook= facebookAnalysis();
     twitter= twitterAnalysis();
+    document.getElementById("giveDirections").innerText = "Click the next button to view your result"
 }
