@@ -1,8 +1,3 @@
-// Get the context of the canvas element we want to select
-$(document).ready(function() {
-           $('score').hide();
-           $('myChart').show();
-});
 
 
 function showGraph(){

@@ -24,7 +24,7 @@ function createDict(){
         var messageScore = analyze(obj["text"])
         sentimentScores= sentimentScores.concat({"sentiment": messageScore, "time": obj["time"]})
 
-        var time = obj["time"][0]+ obj["time"][1]
+        var time = obj["time"][0]+ " "+obj["time"][1]
 
         if(window.grouping[time]){
           console.log("entereing with value")
