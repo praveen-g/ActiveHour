@@ -6,12 +6,18 @@ var label=[]
 var datapoints=[]
 
 function arrangeData(){
-  label=Object.keys(grouping)
-  label.forEach(function(arr, index){
-    var sum = ((grouping[arr].reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/grouping[arr].length
-    datapoints = datapoints.concat(sum) 
-  });
-  document.getElementById("score").innerText = "This month's score is"+datapoints[0];
+    label=Object.keys(grouping)
+    label.forEach(function(arr, index){
+      if (grouping[arr].length>){
+        var sum = ((grouping[arr].reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/grouping[arr].length *10
+        datapoints = datapoints.concat(sum)
+      } 
+      else{
+        delete label[label.indexOf(arr)]
+      }
+    });
+  }
+  document.getElementById("score").innerText = "This month's score is"+datapoints[0]/10;
   console.log(grouping)
   console.log(label)
   console.log(datapoints)
