@@ -21,5 +21,6 @@ function facebookAnalysis(){
 	        var nextPage=response.nextpage
 	        getPosts(nextPage);
 	     }
+	});
 
 }

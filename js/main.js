@@ -13,12 +13,13 @@ function sentimentAnalysis(socialObject){
     }
 }
 
-function createDict(facebookMessages,twitterMessges){
+function createDict(){
 
-    for (var i = 0; i<facebookMessages.length; i++) {
+    for (var i = 0; i<twitterDict.length; i++) {
 
-        sentimentScores = sentimentScores.push(sentimentAnalysis(mainDict[i]))
+        sentimentScores = sentimentScores.push(sentimentAnalysis(twitterDict[i]))
     }
+
 }
 
 function getDict(){
@@ -35,6 +36,7 @@ function startAnalysing(){
     var commentCall= getComments();
     var postCall=createPostsDictionary();
     twitterAnalysis();
+    createDict()
     // getDict();
     // //var insta = instagramAnalysis();
     // createDict(facebookMessages,twitterMessages)

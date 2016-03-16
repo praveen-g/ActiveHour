@@ -78,30 +78,27 @@ function formUrls(){
 	return true
 }
 
-function getPosts(){
+function getPosts(nextPage){
 	var i =0
-      	while(i < 8){
+	while(i < 8){
 
-        	nextpage = response.paging.next;
-        	FB.api(nextpage, function(response){
-		    	posts=posts.concat(response.data);
-
-			});
-        	i++;
-		}
-		return true
+		FB.api(nextPage, function(response){
+    		posts=posts.concat(response.data);
+    		nextPage=response.nextpage
+		});
+        i++;
+    }
 }
 
 function facebookAnalysis(){
-	console.log("here")
+
 	fb.api("/me/feed", function(response){
-
-
 		if (response && !response.error) {
 
 	        posts=posts.concat(response.data)
-	        var getPages=getPosts()
-		}
+	        var nextPage=response.nextpage
+	        getPosts(nextPage);
+	     }
 	});
 
 }
