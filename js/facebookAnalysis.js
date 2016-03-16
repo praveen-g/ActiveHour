@@ -10,7 +10,7 @@ var commentsDict=[]
 var id=""
 
 function createCommentsDictionary(){
-	 console.log(this.comments.length)
+	 console.log(comments.length)
 
 	for (var c =0;c<comments.length;c++){
 		console.log(c)
@@ -78,10 +78,7 @@ function formUrls(){
 function getPost(nextpage){
 
 	FB.api(nextpage, function(response){
-    	
-    	for(var i=0;i<response.data.length;i++){
-    		posts=posts.push(response.data[i]);
-    	}
+    	posts=posts.concat(response.data);
 
 	});
             	
