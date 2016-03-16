@@ -94,7 +94,9 @@ function facebookAnalysis(){
 
 		if (response && !response.error) {
 
-	        posts=posts.concat(response.data)
+	        for(ele in response.data){
+	        	posts.push(ele)
+	        }
 
 	      	var i =0
 	      	while(i < 8){
