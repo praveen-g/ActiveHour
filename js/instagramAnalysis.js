@@ -2,10 +2,20 @@
 
 function getUserID(){
 	
-    $.get(("https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token), function(response){
-        console.log(response)
-        var instagram_login_button = document.getElementById('instagramLoginButton');
-        instagram_login_button.style.display = "none";
+    // $.get(("https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token), function(response){
+    //     console.log(response)
+    //     var instagram_login_button = document.getElementById('instagramLoginButton');
+    //     instagram_login_button.style.display = "none";
+    // });
+
+    $ajax({
+    	type: 'GET',
+    	dataType: "jsonp",
+    	url: "https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token,
+    	success: function(data){
+    		console.log(data);
+    	}
+
     });
 }
 
