@@ -7,33 +7,20 @@ var facebookMessages=[]
 
 var id=""
 
-function createDict(){
-	for (k =0; k<posts.length; k++){
+function createDict(data){
+	for (k =0; k<data.length; k++){
 		
-		var str1 =posts[k]["message"]
+		var str1 =data[k]["message"]
 
 		if (str1!=null){
 
 			 var obj = {
-			 	"text":str1, "time": posts[k]["created_time"]
+			 	"text":str1, "time": data[k]["created_time"]
 			 }
 			 facebookMessages.push(obj)
 		}
 	}
 
-
-	for (l =0; l<comments.length; l++){
-		var str2 =comments[l]["message"]
-
-		if (str2!=null){
-			var obj1 = {
-			 	"text":str2, "time": comments[l]["created_time"]
-			 }
-			 console.log(obj1)
-			 facebookMessages.push(obj1)
-		}
-	}
-	console.log(facebookMessages.length)
 }
 
 function commentAPICall(val){
@@ -90,7 +77,8 @@ function facebookAnalysis(){
     		}
     		formUrls();
     		getComments();
-    		createDict();
+    		createDict(posts);
+    		createDict(comments);
 		}
 	});
 	return 2
