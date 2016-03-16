@@ -6,8 +6,6 @@ var FacebookDict=[]
 var postsDict=[]
 var commentsDict=[]
 
-var id=""
-
 // function createCommentsDictionary(){
 // 	 console.log(comments.length)
 
@@ -77,14 +75,14 @@ function createPostsDictionary(){
 // 	return true
 // }
 
-function getPosts(nextPage){
-	console.log("im getting called")
-	FB.api(nextPage, function(response){
-		this.posts=posts.concat(response.data);
-		nextPage=response.nextpage
-	});
+// function getPosts(nextPage){
+// 	console.log("im getting called")
+// 	FB.api(nextPage, function(response){
+// 		this.posts=posts.concat(response.data);
+// 		nextPage=response.nextpage
+// 	});
 
-}
+// }
 
 function facebookAnalysis(){
 
@@ -92,8 +90,6 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 
 	        this.posts=posts.concat(response.data)
-	        var nextPage=response.nextpage
-	        var blah= getPosts(nextPage);
 	        //var url = formUrls()
 			//var comments=getComments();
 			var postsDict = createPostsDictionary();
