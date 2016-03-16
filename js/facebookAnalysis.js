@@ -6,7 +6,7 @@ var url=[]
 var FacebookDict=[]
 var postsDict=[]
 var commentsDict=[]
-
+var nextPage=[]
 var id=""
 
 function createCommentsDictionary(){
@@ -87,19 +87,28 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 
 	        posts=posts.concat(response.data)
+	        nextPage=response.nextpage
+	     }
 
-	      	var i =0
-	      	while(i < 8){
+	   //    	var i =0
+	   //    	while(i < 8){
 
-            	nextpage = response.paging.next;
-            	FB.api(nextpage, function(response){
-			    	posts=posts.concat(response.data);
+    //         	nextpage = response.paging.next;
+	// FB.api(nextpage, function(response){
+ //    	posts=posts.concat(response.data);
 
-				});
-            	i++;
-    		}
+	// });
+    //         	i++;
+    // 		}
 
-		}
+		
 	});
+	FB.api(nextPage, function(response){
+    	posts=posts.concat(response.data);
+
+	});
+	formUrls();
+    getComments();
+    createPostsDictionary();
 
 }
