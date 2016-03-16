@@ -35,43 +35,43 @@ function createPostsDictionary(){
 			// splitting the time for Facebook posts, posts[p]["created_time"] is a list in format ["yyyy","mm","dd"]
 			posts[p]["created_time"] = posts[p]["created_time"].replace(/T.*/,"")
 			posts[p]["created_time"] = posts[p]["created_time"].split("-")
-			switch (posts[p]["created_time"])
+			switch (posts[p]["created_time"][1])
 			{
 				case "01":
-					posts[p]["created_time"] = "Jan"
+					posts[p]["created_time"][1] = "Jan"
 					break
 				case "02":
-					posts[p]["created_time"] = "Feb"
+					posts[p]["created_time"][1] = "Feb"
 					break
 				case "03":
-					posts[p]["created_time"] = "Mar"
+					posts[p]["created_time"][1] = "Mar"
 					break
 				case "04":
-					posts[p]["created_time"] = "Apr"
+					posts[p]["created_time"][1] = "Apr"
 					break
 				case "05":
-					posts[p]["created_time"] = "May"
+					posts[p]["created_time"][1] = "May"
 					break
 				case "06":
-					posts[p]["created_time"] = "Jun"
+					posts[p]["created_time"][1] = "Jun"
 					break
 				case "07":
-					posts[p]["created_time"] = "Jul"
+					posts[p]["created_time"][1] = "Jul"
 					break
 				case "08":
-					posts[p]["created_time"] = "Aug"
+					posts[p]["created_time"][1] = "Aug"
 					break
 				case "09":
-					posts[p]["created_time"] = "Sep"
+					posts[p]["created_time"][1] = "Sep"
 					break
 				case "10":
-					posts[p]["created_time"] = "Oct"
+					posts[p]["created_time"][1] = "Oct"
 					break
 				case "11":
-					posts[p]["created_time"] = "Nov"
+					posts[p]["created_time"][1] = "Nov"
 					break
 				case "12":
-					posts[p]["created_time"] = "Dec"
+					posts[p]["created_time"][1] = "Dec"
 					break
 
 			}
