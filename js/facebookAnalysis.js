@@ -106,7 +106,7 @@ function facebookAnalysis(){
 
     		formUrls();
     		getComments();
-    		createDictionary()
+    		createPostsDictionary();
 		}
 	});
 
