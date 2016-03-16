@@ -8,7 +8,7 @@ function getUserID(){
     //     instagram_login_button.style.display = "none";
     // });
 
-    $ajax({
+    $.ajax({
     	type: 'GET',
     	dataType: "jsonp",
     	url: "https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token,
