@@ -23,12 +23,13 @@ function createDict(){
 }
 
 function getDict(){
+    console.log("in dict")
    console.log(FacebookDict)
    console.log(twitterDict)
 }
 
 function startAnalysing(){
-
+    console.log("in analyze")
     facebookAnalysis();
     twitterAnalysis();
 
