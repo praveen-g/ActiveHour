@@ -15,10 +15,10 @@ function createDict(){
         sentimentScores= sentimentScores.concat({"sentiment": messageScore, "time": obj["time"]})
         var time = obj["time"][0]+ obj["time"][1]
         if(!grouping[time]){
-          grouping[str]=[]
+          grouping[time]=[]
         }
         else{
-          grouping[str]=grouping[str].concat(obj["sentiment"])
+          grouping[time]=grouping[time].concat(obj["sentiment"])
         }
     })
 
