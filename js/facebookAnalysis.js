@@ -9,6 +9,7 @@ var id=""
 
 function createDict(data){
 	for (x in data){
+		console.log(x)
 		
 		var str1 =x["message"]
 
