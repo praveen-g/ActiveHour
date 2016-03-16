@@ -16,7 +16,7 @@ function arrangeData(){
         delete label[label.indexOf(arr)]
       }
     });
-  }
+
   document.getElementById("score").innerText = "This month's score is"+datapoints[0]/10;
   console.log(grouping)
   console.log(label)
