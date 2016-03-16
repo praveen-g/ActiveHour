@@ -75,14 +75,14 @@ function createPostsDictionary(){
 // 	return true
 // }
 
-function getPosts(nextPage){
-	console.log("im getting called")
-	FB.api(nextPage, function(response){
-		this.posts=posts.concat(response.data);
-		var postsDict = createPostsDictionary();
-	});
+// function getPosts(nextPage){
+// 	console.log("im getting called")
+// 	FB.api(nextPage, function(response){
+// 		this.posts=posts.concat(response.data);
+		
+// 	});
 
-}
+// }
 
 function facebookAnalysis(){
 
@@ -90,10 +90,11 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 
 	        this.posts=posts.concat(response.data)
-	        console.log(this.posts.length)
-	        var getposts = getPosts(response.nextpage)
+	        console.log(response)
+	        //var getposts = getPosts(response.nextpage)
 	        //var url = formUrls()
 			//var comments=getComments();
+			var postsDict = createPostsDictionary();
 			
 	     }
 	});

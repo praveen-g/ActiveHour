@@ -23,18 +23,13 @@ function createDict(){
 }
 
 function getDict(){
-    facebookMessages = facebookAnalysis();
-    twitterMessages = twitterAnalysis();
-
+   console.log(FacebookDict)
+   console.log(twitterDict)
 }
 
 function startAnalysing(){
 
     facebookAnalysis();
-    console.log(FacebookDict)
     twitterAnalysis();
-    // getDict();
-    // //var insta = instagramAnalysis();
-    // createDict(facebookMessages,twitterMessages)
 
 }
