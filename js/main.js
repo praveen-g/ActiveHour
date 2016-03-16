@@ -1,6 +1,8 @@
 
 function startAnalysing(){
-	var face = facebookAnalysis();
-	var twitter = twitterAnalysis();
-    var insta = instagramAnalysis();
+	var facebookMessages = facebookAnalysis();
+	var twitterMessges = twitterAnalysis();
+    //var insta = instagramAnalysis();
+    console.log(facebookMessages.length)
+    console.log(twitterMessges.length)
 }

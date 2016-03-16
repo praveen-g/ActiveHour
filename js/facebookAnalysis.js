@@ -3,6 +3,8 @@ var posts= []
 var comments = []
 var FacebookLOL = 0
 var url=[]
+var facebookMessages=[]
+var id=""
 
 function countLOLs(){
 	for (k =0; k<posts.length; k++){
@@ -11,11 +13,15 @@ function countLOLs(){
 
 		if (str1!=null){
 
-			str1=str1.toLowerCase()
-			if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
+			 var obj = {
+			 	"text":str1, "time": posts[k]["created_time"]
+			 }
+			 facebookMessages.push(obj)
+			// str1=str1.toLowerCase()
+			// if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
 				
-				this.FacebookLOL++
-			}
+			// 	this.FacebookLOL++
+			// }
 		}
 	}
 
@@ -25,12 +31,16 @@ function countLOLs(){
 
 		if (str2!=null){
 
-			str2=str2.toLowerCase()
+			var obj = {
+			 	"text":str2, "time": posts[k]["created_time"]
+			 }
+			 facebookMessages.push(obj)
+			// str2=str2.toLowerCase()
 
-			if ( str2.indexOf("lol") >-1 || str2.indexOf("haha")>-1){
+			// if ( str2.indexOf("lol") >-1 || str2.indexOf("haha")>-1){
 
-				this.FacebookLOL++
-			}
+			// 	this.FacebookLOL++
+			// }
 
 		}
 	}
@@ -76,6 +86,13 @@ function getPost(nextpage){
 
 
 function facebookAnalysis(){
+
+	fb.api("/10156847053390112/comments", function(response){
+
+		if (response && !response.error) {
+	        console.log(response)
+	      }
+	})	
 
 	fb.api("/me", function(response){
 

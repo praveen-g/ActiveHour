@@ -1,6 +1,6 @@
 var tweets=[]
 var TwitterLOL=0
-
+var twitterMesages=[]
 function countLols(){
   console.log(9)
   for (var k=0; k<tweets.length; k++){
@@ -9,11 +9,16 @@ function countLols(){
 
     if(tweetText!=""){
 
-      tweetText= tweetText.toLowerCase()
-      if(tweetText.indexOf("lol")>-1 || tweetText.indexOf("haha")>-1){
 
-        this.TwitterLOL++
+      var obj={
+        "text":tweetText, "time": tweets[k]["created_at"]
       }
+      twitterMesages.push(obj)
+      // tweetText= tweetText.toLowerCase()
+      // if(tweetText.indexOf("lol")>-1 || tweetText.indexOf("haha")>-1){
+
+      //   this.TwitterLOL++
+      // }
     }   
   }
 }
@@ -29,6 +34,6 @@ function twitterAnalysis(){
           countLols();
       }
   );
-  return 2
+  return twitterMesages
   
 }

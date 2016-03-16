@@ -1,5 +1,4 @@
 var instagram_access_token= "";
-var flag=false;
 
 function changeURL(){
 
@@ -14,6 +13,18 @@ function getAccessToken(){
     instagram_access_token = instagram_access_token.split("=").pop();
     console.log(instagram_access_token);
 	flag=true;
+
+	$.ajax({
+    	type: 'GET',
+    	dataType: "jsonp",
+    	url: "https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token,
+    	success: function(response){
+    		console.log(response)
+    		var instagram_login_button = document.getElementById('instagramLoginButton');
+            twitter_login_button.style.display = "none";
+    	}
+
+    });
 }
 window.onload = getAccessToken();
 
