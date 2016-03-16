@@ -79,15 +79,13 @@ function formUrls(){
 }
 
 function getPosts(nextPage){
-	var i =0
-	while(i < 8){
 
-		FB.api(nextPage, function(response){
-    		posts=posts.concat(response.data);
-    		nextPage=response.nextpage
-		});
-        i++;
-    }
+	FB.api(nextPage, function(response){
+		posts=posts.concat(response.data);
+		nextPage=response.nextpage
+	});
+	return true
+
 }
 
 function facebookAnalysis(){
@@ -97,7 +95,7 @@ function facebookAnalysis(){
 
 	        posts=posts.concat(response.data)
 	        var nextPage=response.nextpage
-	        getPosts(nextPage);
+	        var blah= getPosts(nextPage);
 	     }
 	});
 

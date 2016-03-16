@@ -30,11 +30,10 @@ function getDict(){
 
 function startAnalysing(){
 
-    var variable=facebookAnalysis();
-    console.log(posts)
-    var urlCall = formUrls();
-    var commentCall= getComments();
-    var postCall=createPostsDictionary();
+    facebookAnalysis();
+    formUrls();
+    getComments();
+    createPostsDictionary();
     twitterAnalysis();
     createDict()
     // getDict();
