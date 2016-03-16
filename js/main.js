@@ -1,13 +1,13 @@
 var mainDict=[]
 var sentimentScores = []
 
-var sentiment = require('sentiment')
-
 function sentimentAnalysis(socialObject){
-    var messageScore = sentiment(socialObject["text"])
-    return sentimentAndTime = {
-        "sentiment": messageScore, "time": socialObject["time"]
-    }
+    require('sentiment', function (socialObject){
+        var messageScore = sentiment(socialObject["text"])
+        return sentimentAndTime = {
+            "sentiment": messageScore, "time": socialObject["time"]
+        }
+    });
 }
 
 function startAnalysing(){
