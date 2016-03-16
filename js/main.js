@@ -8,7 +8,7 @@ var datapoints=[]
 function arrangeData(){
     label=Object.keys(grouping)
     label.forEach(function(arr, index){
-      if (grouping[arr].length>){
+      if (grouping[arr].length>0){
         var sum = ((grouping[arr].reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/grouping[arr].length *10
         datapoints = datapoints.concat(sum)
       } 
