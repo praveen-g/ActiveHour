@@ -14,8 +14,15 @@ function arrangeData(){
         datapoints = datapoints.concat(sum)
       } 
     });
+  if (datapoints[0]/10>0){
+  document.getElementById("score").innerText = "This month's score is"+datapoints[0]/10+"! Great to know that you're having a good month!"
+}
+else{
+  document.getElementById("score").innerText = "This month's score is"+datapoints[0]/10+"!"
+  elem.src= "http://giphy.com/gifs/puppy-peek-a-boo-140AoLLb3fvPuo"
+  document.getElementById("placehere").appendChild(elem);
 
-  document.getElementById("score").innerText = "This month's score is"+datapoints[0]/10;
+}
   console.log(grouping)
   console.log(label)
   console.log(datapoints)
