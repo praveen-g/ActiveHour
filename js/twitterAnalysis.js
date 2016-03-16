@@ -9,7 +9,7 @@ function countLols(){
     if(tweetText){
 
       var obj3={
-        "text":tweetText, "time": t["created_at"]
+        "text":tweetText["text"], "time": tweetText["created_at"]
       }
       twitterDict= twitterDict.concat(obj3)
     }   
