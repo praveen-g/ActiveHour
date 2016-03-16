@@ -24,6 +24,7 @@ function createCommentsDictionary(){
 			 FacebookDict=FacebookDict.concat(obj2)
 		} 
 	}
+	return true
 }
 
 
@@ -44,8 +45,8 @@ function createPostsDictionary(){
 		}
 	}
 
-	createCommentsDictionary()
-
+	var commentsDictionaryCall = createCommentsDictionary()
+	return true
 }
 
 function commentAPICall(val){
@@ -54,8 +55,9 @@ function commentAPICall(val){
 		if (response && !response.error) {
 	        comments=comments.concat(response["data"])
 	      }
-	    return  1
+	    
 	});
+	return  1
 }
 
 function getComments(){
@@ -63,6 +65,7 @@ function getComments(){
 	for(j=0;j<url.length;j++){
 		var arr = commentAPICall(url[j])
 	}
+	return true
 
 }
 
@@ -72,6 +75,7 @@ function formUrls(){
 		var str="/"+posts[m]["id"]+"/comments?redirect=0"
 		url=url.concat(str)
 	}
+	return true
 }
 
 
@@ -95,9 +99,9 @@ function facebookAnalysis(){
             	i++;
     		}
 
-    		formUrls();
-    		getComments();
-    		createPostsDictionary();
+    		var urlCall = formUrls();
+    		var commentCall= getComments();
+    		var postCall=createPostsDictionary();
 		}
 	});
 
