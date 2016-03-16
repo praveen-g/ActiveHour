@@ -9,22 +9,35 @@ var commentsDict=[]
 
 var id=""
 
-function createDict(data){
+function createDictionary(){
 
-	for (x in data){
-		console.log(x)
+	for (var p in posts){
+		console.log(p)
 		
-		var str1 =x["message"]
+		var str1 =p["message"]
 
 		if (str1!=null){
 
 			 var obj = {
 			 	"text":str1, "time": x["created_time"]
 			 }
-			 facebookMessages= facebookMessages.concat(obj)
+			 FacebookDict=FacebookDict.concat(obj)
 		}
 	}
-	return facebookMessages
+
+	for (var c in comments){
+		console.log(c)
+
+		var str2 =c["message"]
+
+		if (str2!=null){
+
+			 var obj2 = {
+			 	"text":str2, "time": c["created_time"]
+			 }
+			 FacebookDict=FacebookDict.concat(obj2)
+		} 
+	}
 
 }
 
@@ -67,7 +80,7 @@ function getPost(nextpage){
 
 
 function facebookAnalysis(){
-
+	console.log("here")
 	fb.api("/me/feed", function(response){
 
 
@@ -85,10 +98,8 @@ function facebookAnalysis(){
 
     		formUrls();
     		getComments();
-    		postsDict=createDict(posts);
-    		commentsDict= createDict(comments);
+    		createDictionary()
 		}
 	});
 
-	return postsDict.concat(commentsDict)
 }

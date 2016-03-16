@@ -1,25 +1,23 @@
 var tweets=[]
-var twitterMessages=[]
+var twitterDict=[]
 
 function countLols(){
-  for (var k=0; k<tweets.length; k++){
+  for (var t in tweets){
 
-    var tweetText= tweets[k]["text"]
+    var tweetText= t["text"]
 
     if(tweetText!=""){
 
-
-      var obj={
-        "text":tweetText, "time": tweets[k]["created_at"]
+      var obj3={
+        "text":tweetText, "time": t["created_at"]
       }
-      twitterMessages= twitterMessages.concat(obj)
+      twitterDict= twitterDict.concat(obj3)
     }   
   }
 }
 
 function twitterAnalysis(){
   
-  console.log(8)
   cb.__call(
       "statuses_userTimeline",
       {"count": 180},
