@@ -6,7 +6,7 @@ var sentiment
 function createDict(){
 
     mainDict.forEach(function(obj,index){
-        var messageScore = analyze(obj.["text"])
+        var messageScore = analyze(obj["text"])
         sentimentScores.push({"sentiment": messageScore, "time": socialObject["time"]})
     })
 
