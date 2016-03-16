@@ -16,12 +16,13 @@ function makeCall(id){
     			media.concat(response2["data"])
     			if(response2["data"].length==20){
     				iterate--
-    				makeCall(response2["data"][19]["id"])
+    				var asyncControl= makeCall(response2["data"][19]["id"])
     			}
     		}
     	}
 
     });
+    return 1
 }
 
 function getUserID(){
@@ -39,7 +40,7 @@ function getUserID(){
     	success: function(response){
     		media=media.concat(response["data"])
     		if(response["data"].length==20){
-    			makeCall(response["data"][19]["id"])
+    			var asyncControl= makeCall(response["data"][19]["id"])
     		}
     	}
 
