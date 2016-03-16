@@ -14,11 +14,6 @@ function countLols(){
         "text":tweetText, "time": tweets[k]["created_at"]
       }
       twitterMesages.push(obj)
-      // tweetText= tweetText.toLowerCase()
-      // if(tweetText.indexOf("lol")>-1 || tweetText.indexOf("haha")>-1){
-
-      //   this.TwitterLOL++
-      // }
     }   
   }
 }

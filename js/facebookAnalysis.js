@@ -4,9 +4,10 @@ var comments = []
 var FacebookLOL = 0
 var url=[]
 var facebookMessages=[]
+
 var id=""
 
-function countLOLs(){
+function createDict(){
 	for (k =0; k<posts.length; k++){
 
 		var str1 =posts[k]["message"]
@@ -17,13 +18,9 @@ function countLOLs(){
 			 	"text":str1, "time": posts[k]["created_time"]
 			 }
 			 facebookMessages.push(obj)
-			// str1=str1.toLowerCase()
-			// if ( str1.indexOf("lol") >-1 || str1.indexOf("haha")>-1){
-				
-			// 	this.FacebookLOL++
-			// }
 		}
 	}
+	console.log(facebookMessages.length)
 
 	for (l =0; l<comments.length; l++){
 
@@ -35,15 +32,9 @@ function countLOLs(){
 			 	"text":str2, "time": posts[k]["created_time"]
 			 }
 			 facebookMessages.push(obj)
-			// str2=str2.toLowerCase()
-
-			// if ( str2.indexOf("lol") >-1 || str2.indexOf("haha")>-1){
-
-			// 	this.FacebookLOL++
-			// }
-
 		}
 	}
+	console.log(facebookMessages.length)
 }
 
 function commentAPICall(val){
@@ -87,20 +78,6 @@ function getPost(nextpage){
 
 function facebookAnalysis(){
 
-	fb.api("/10156847053390112/comments", function(response){
-
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})	
-
-	fb.api("/me", function(response){
-
-		if (response && !response.error) {
-	        console.log(response)
-	      }
-	})	
-
 	fb.api("/me/feed", function(response){
 
 
@@ -114,7 +91,7 @@ function facebookAnalysis(){
     		}
     		formUrls();
     		getComments();
-    		countLOLs();
+    		createDict();
 		}
 	});
 	return 2
