@@ -3,11 +3,13 @@ var posts= []
 var comments = []
 var FacebookLOL = 0
 var url=[]
-var facebookMessages=[]
+
 
 var id=""
 
 function createDict(data){
+	var facebookMessages=[]
+
 	for (x in data){
 		console.log(x)
 		
@@ -18,9 +20,10 @@ function createDict(data){
 			 var obj = {
 			 	"text":str1, "time": x["created_time"]
 			 }
-			 facebookMessages.push(obj)
+			 facebookMessages= facebookMessages.concat(obj)
 		}
 	}
+	return facebookMessages
 
 }
 
@@ -63,7 +66,8 @@ function getPost(nextpage){
 
 
 function facebookAnalysis(){
-
+	var postsDict=[]
+	var commentsDict=[]
 	fb.api("/me/feed", function(response){
 
 
@@ -77,9 +81,10 @@ function facebookAnalysis(){
     		}
     		formUrls();
     		getComments();
-    		createDict(posts);
-    		createDict(comments);
+    		postsDict=createDict(posts);
+    		commentsDict= createDict(comments);
 		}
 	});
-	return facebookMessages
+
+	return postsDict.concat(commentsDict)
 }
