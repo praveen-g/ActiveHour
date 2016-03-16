@@ -2,7 +2,7 @@ var mainDict=[]
 var sentimentScores = []
 var sentiment
 var facebookMessages=[]
-var twitterMessges=[]
+var twitterMessages=[]
 // if (typeof define !== 'function') { var define = require('amdefine')(module) }
 // define( function(require){
 //     sentiment = require('sentiment');
@@ -31,7 +31,7 @@ function createDict(facebookMessages,twitterMessges){
 
 function getDict(){
     facebookMessages = facebookAnalysis();
-    twitterMessges = twitterAnalysis();
+    twitterMessages = twitterAnalysis();
 
 }
 
@@ -39,6 +39,6 @@ function startAnalysing(){
 
     getDict();
     //var insta = instagramAnalysis();
-    createDict(facebookMessages,twitterMessges)
+    createDict(facebookMessages,twitterMessages)
 
 }

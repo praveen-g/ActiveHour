@@ -1,6 +1,7 @@
 var tweets=[]
 
 function countLols(){
+  
   var twitterMessages=[]
 
   console.log(9)
