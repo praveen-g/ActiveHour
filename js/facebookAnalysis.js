@@ -16,7 +16,7 @@ function createCommentsDictionary(){
 		console.log(c)
 
 
-		if (comments[c]["message"]!=null){
+		if (comments[c]["message"]){
 
 			 var obj2 = {
 			 	"text":comments[c]["message"], "time": comments[c]["created_time"]
@@ -34,7 +34,7 @@ function createPostsDictionary(){
 	for (var p=0;p<posts.length;p++){
 		console.log(p)
 
-		if (posts[p]["message"]!=""){
+		if (posts[p]["message"]){
 
 			 var obj = {
 			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
