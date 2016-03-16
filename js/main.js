@@ -16,13 +16,13 @@ function getDict(){
 
    mainDict=twitterDict.concat(FacebookDict);
    createDict()
-   
+
 }
 
 function startAnalysing(){
     console.log("in analyze")
     var facebook= facebookAnalysis();
     var twitter= twitterAnalysis();
-    getDict();
+    var dict =getDict();
 
 }
