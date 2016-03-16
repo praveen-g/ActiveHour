@@ -32,7 +32,9 @@ function createPostsDictionary(){
 		console.log(p)
 
 		if (posts[p]["message"]){
-
+			// splitting the time for Facebook posts, posts[p]["created_time"] is a list in format ["yyyy","mm","dd"]
+			posts[p]["created_time"] = posts[p]["created_time"].replace(/T.*/,"")
+			posts[p]["created_time"] = posts[p]["created_time"].split("-")
 			 var obj = {
 			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
 			 }
