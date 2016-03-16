@@ -12,7 +12,7 @@ function arrangeData(){
   grouping.keys().forEach(function(arr, index){
     var sum = ((arr.reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/arr.length
     datapoints = datapoints.concat(sum) 
-  }
+  });
   console.log(grouping)
   console.log(label)
   console.log(datapoints)
