@@ -8,8 +8,8 @@ var negative=[]
 var datapoints=[]
 
 function arrangeData(){
-  label=grouping.keys()
-  grouping.keys().forEach(function(arr, index){
+  label=Object.keys(grouping)
+  label.forEach(function(arr, index){
     var sum = ((arr.reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/arr.length
     datapoints = datapoints.concat(sum) 
   });
