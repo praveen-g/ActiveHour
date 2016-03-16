@@ -94,10 +94,9 @@ function facebookAnalysis(){
 	        this.posts=posts.concat(response.data)
 	        var nextPage=response.nextpage
 	        var blah= getPosts(nextPage);
+	        var url = formUrls()
+			//var comments=getComments();
+			var postsDict = createPostsDictionary();
 	     }
 	});
-	var url = formUrls()
-	//var comments=getComments();
-	var postsDict = createPostsDictionary();
-	return FacebookDict
 }
