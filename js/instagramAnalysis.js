@@ -12,4 +12,6 @@ function getUserID(){
 function instagramAnalysis(){
     getUserID();
     // getPhotos();
+    return 3
+
 }

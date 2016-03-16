@@ -1,6 +1,6 @@
 
 function startAnalysing(){
-	facebookAnalysis();
-	twitterAnalysis();
-    instagramAnalysis();
+	var face = facebookAnalysis();
+	var twitter = twitterAnalysis();
+    var insta = instagramAnalysis();
 }

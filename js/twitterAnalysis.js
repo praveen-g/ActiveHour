@@ -29,5 +29,6 @@ function twitterAnalysis(){
           countLols();
       }
   );
+  return 2
   
 }

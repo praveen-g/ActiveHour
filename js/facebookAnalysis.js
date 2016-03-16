@@ -103,4 +103,5 @@ function facebookAnalysis(){
     		countLOLs();
 		}
 	});
+	return 2
 }
