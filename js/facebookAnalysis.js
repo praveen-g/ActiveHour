@@ -75,18 +75,6 @@ function formUrls(){
 }
 
 
-function getPost(nextpage){
-
-	FB.api(nextpage, function(response){
-    	posts=posts.concat(response.data);
-
-	});
-            	
-}
-
-
-
-
 function facebookAnalysis(){
 	console.log("here")
 	fb.api("/me/feed", function(response){
@@ -100,7 +88,10 @@ function facebookAnalysis(){
 	      	while(i < 8){
 
             	nextpage = response.paging.next;
-            	getPost(nextpage)
+            	FB.api(nextpage, function(response){
+			    	posts=posts.concat(response.data);
+
+				});
             	i++;
     		}
 
