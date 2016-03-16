@@ -1,10 +1,9 @@
 // Get the context of the canvas element we want to select
 
-function drawGraph(){
     var ctx = document.getElementById("myChart").getContext("2d");
 
     var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October"],
+        labels: window.label,
         datasets: [
             {
                 label: "My First dataset",
@@ -30,4 +29,3 @@ function drawGraph(){
     };
 
     var myLineChart = new Chart(ctx).Line(data);
-}

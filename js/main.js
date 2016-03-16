@@ -3,14 +3,12 @@ var sentimentScores = []
 var sentiment
 window.grouping=[]
 var label=[]
-var positive=[]
-var negative=[]
 var datapoints=[]
 
 function arrangeData(){
   label=Object.keys(grouping)
   label.forEach(function(arr, index){
-    var sum = ((arr.reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/arr.length
+    var sum = ((grouping[arr].reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/grouping[arr].length
     datapoints = datapoints.concat(sum) 
   });
   console.log(grouping)
@@ -29,7 +27,7 @@ function createDict(){
 
         if(window.grouping[time]){
           console.log("entereing with value")
-          window.grouping[time]=window.grouping[time].concat(obj["sentiment"])
+          window.grouping[time]=window.grouping[time].concat(messageScore)
 
         }
         else{
