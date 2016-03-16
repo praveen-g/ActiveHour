@@ -24,7 +24,7 @@
 
   <h1 style="font-family: 'Futura';font-size: 4vw; color:'#333333'; text-align: center;">Social Media Sentiment Tracker</h1>
   
-  <h2 style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center;">Our program asks users to connect their Facebook, and Twitter accounts and queries recent posts, media, and tweets and performs a sentiment analysis on their content. The analysis generates a positivity or negativity score on the text component of their content and displays a chart showing their sentiment over the period of time that the sample data is extracted in</h2>
+  <h2 style="font-family: 'Futura';font-size: 2vw; color:'#333333' padding-left:2%; padding-right: 2%; text-align: center;">Our program asks users to connect their Facebook, and Twitter accounts and queries recent posts, media, and tweets and performs a sentiment analysis on their content. The analysis generates a positivity or negativity score on the text component of their content and displays a chart showing their sentiment over the period of time that the sample data is extracted in</h2>
   
   <div style=" padding-top: 5%;padding-left: 10%">
 
@@ -46,14 +46,15 @@
     </div>
 
     <div style="padding-bottom: 5%">
-    <button class="btn btn-md btn-primary active" onclick="startAnalysing();" style="width: 80%;">Analyze</button>
+    <button class="btn btn-md btn-primary active" onclick="startAnalysing();" style="width: 80%;">Allow me to Analyze</button>
     </div> 
-    <button class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">View Results</button>
+    <button class="btn btn-md btn-primary active" onclick="getDict()" style="width: 80%;">Click me to View Results</button>
 
-    <div id="score" style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center"></div>
+    <div style="padding-bottom: 5%">
+      <div id="score" style="font-family: 'Futura';font-size: 2vw; color:'#333333'; text-align: center"></div>
+    </div>
 
-
-  <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 15%"></canvas>
+  <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 12.5%"></canvas>
   
   <script type="text/javascript">
     
@@ -80,7 +81,7 @@
 }
   </script>
 
-<button class="btn btn-md btn-primary active" onclick="showGraph();" style="width: 80%;">View Graph</button>
+<button class="btn btn-md btn-primary active" onclick="showGraph();" style="width: 80%;padding-top: 2%">View Graph</button>
 </div>
 </body>
 </html> 
