@@ -27,13 +27,13 @@
     <fb:login-button scope="public_profile,email,user_friends,user_posts,user_photos" onlogin="checkLoginState();"></fb:login-button>
   </div>
 
-  <button onclick="changeURL();" type="button" class="btn btn-md btn-primary active" id ="instagramLoginButton" disabled>Login to Instagram</button>
+  <button onclick="changeURL();" type="button" class="btn btn-md btn-primary active" id ="instagramLoginButton">Login to Instagram</button>
 
-  <div style="padding-top: 10%; align:center;">
+  <div style=" padding-top: 10%; margin-left: auto; margin-right: auto">
 
-    <button id = "twitterLoginButton" type="button" class="btn btn-md btn-primary active" onclick="twitterAuthorize();" syle> Login to Twitter</button><br><br>
+    <button id = "twitterLoginButton" type="button" class="btn btn-md btn-primary active" onclick="twitterAuthorize();" > Login to Twitter</button><br><br>
 
-    <input id = "PINFIELD" placeholder="" style="width:20%; padding-top: 10%"></input>
+    <input id = "PINFIELD" placeholder="" style="width:20%;"></input>
 
     <input id = "submitButton" type="button" onclick="getTwitterAccessToken();" value="Submit"></input>
 
@@ -46,7 +46,7 @@
 
   </div>
 
-  <canvas id="myChart" width="550" height="550"></canvas>
+  <canvas id="myChart" width="700" height="400"></canvas>
 
 </body>
 
