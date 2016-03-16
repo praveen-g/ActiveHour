@@ -5,26 +5,17 @@ window.grouping=[]
 var label=[]
 var positive=[]
 var negative=[]
+var datapoints=[]
 
 function arrangeData(){
-  console.log(window.grouping)
-  window.grouping.forEach(function(obj,index){
-    label=label.concat(obj.keys())
-    positive=positive.concat(
-        var total=0
-        $.each(arr,function() {
-            if (this>0)
-              total += this;
-        });        
-      )
-    negative=negative.concat(
-        var total=0
-        $.each(arr,function() {
-            if (this<0)
-              total += this;
-        });
-      )
-  })
+  label=grouping.keys()
+  grouping.keys().forEach(function(arr, index){
+    var sum = ((arr.reduce(function(a, b) { return a + b; }, 0)).toFixed(2))/arr.length
+    datapoints = datapoints.concat(sum) 
+  }
+  console.log(grouping)
+  console.log(label)
+  console.log(datapoints)
 }
 
 function createDict(){
