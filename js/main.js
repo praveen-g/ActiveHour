@@ -10,11 +10,10 @@ var sentiment
 
 
 function sentimentAnalysis(socialObject){
-    var messageScore 
 
-    require(['sentiment'], function (sentiment) {
-        messageScore   = sentiment(socialObject["text"])
-    });
+    // require(['sentiment'], function (sentiment) {
+    var messageScore   = analyze(socialObject["text"])
+    // });
 
     return sentimentAndTime = {
         "sentiment": messageScore, "time": socialObject["time"]
@@ -29,7 +28,8 @@ function startAnalysing(){
     console.log(twitterMessges.length)
     mainDict=facebookMessages+twitterMessges
 
-    for (var i = 0; i<mainDict.length; i--) {
+    for (var i = 0; i<mainDict.length; i++) {
+
         sentimentScores = sentimentScores.concat(sentimentAnalysis(mainDict[i]))
     };
 }
