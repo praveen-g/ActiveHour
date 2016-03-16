@@ -53,6 +53,31 @@
   </div>
 
   <canvas id="myChart" width="600" height="300" style="padding-top: 10%; padding-left: 10%"></canvas>
+  
+  <script type="text/javascript">
+    
+    function showGraph(){
+    var ctx = document.getElementById("myChart").getContext("2d");
 
+    var data = {
+        labels: window.label,
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: window.datapoints
+            }
+        ]
+    };
 
+    var myLineChart = new Chart(ctx).Line(data);
+}
+  </script>
+
+<button class="btn btn-md btn-primary active" onclick="showGraph();" style="width: 80%;">View Results</button>
 </html> 
