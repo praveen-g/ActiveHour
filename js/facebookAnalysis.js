@@ -35,6 +35,33 @@ function createPostsDictionary(){
 			// splitting the time for Facebook posts, posts[p]["created_time"] is a list in format ["yyyy","mm","dd"]
 			posts[p]["created_time"] = posts[p]["created_time"].replace(/T.*/,"")
 			posts[p]["created_time"] = posts[p]["created_time"].split("-")
+			switch (posts[p]["created_time"])
+			{
+				case "01":
+					posts[p]["created_time"] = "Jan"
+				case "02":
+					posts[p]["created_time"] = "Feb"
+				case "03":
+					posts[p]["created_time"] = "Mar"
+				case "04":
+					posts[p]["created_time"] = "Apr"
+				case "05":
+					posts[p]["created_time"] = "May"
+				case "06":
+					posts[p]["created_time"] = "Jun"
+				case "07":
+					posts[p]["created_time"] = "Jul"
+				case "08":
+					posts[p]["created_time"] = "Aug"
+				case "09":
+					posts[p]["created_time"] = "Sep"
+				case "10":
+					posts[p]["created_time"] = "Oct"
+				case "11":
+					posts[p]["created_time"] = "Nov"
+				case "12":
+					posts[p]["created_time"] = "Dec"
+			}
 			 var obj = {
 			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
 			 }
