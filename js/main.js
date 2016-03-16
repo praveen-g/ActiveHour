@@ -1,7 +1,8 @@
 var mainDict=[]
 var sentimentScores = []
 var sentiment
-
+var facebookMessages=[]
+var twitterMessges=[]
 // if (typeof define !== 'function') { var define = require('amdefine')(module) }
 // define( function(require){
 //     sentiment = require('sentiment');
@@ -24,17 +25,20 @@ function createDict(facebookMessages,twitterMessges){
 
     for (var i = 0; i<facebookMessages.length; i++) {
 
-        sentimentScores = sentimentScores.concat(sentimentAnalysis(mainDict[i]))
-    };
-    return sentimentScores
+        sentimentScores = sentimentScores.push(sentimentAnalysis(mainDict[i]))
+    }
+}
+
+function getDict(){
+    facebookMessages = facebookAnalysis();
+    twitterMessges = twitterAnalysis();
+
 }
 
 function startAnalysing(){
-	var facebookMessages = facebookAnalysis();
-	var twitterMessges = twitterAnalysis();
-    //var insta = instagramAnalysis();
-    
-    var scores = createDict(facebookMessages,twitterMessges)
 
-    console.log(scores)
+    getDict();
+    //var insta = instagramAnalysis();
+    createDict(facebookMessages,twitterMessges)
+
 }
