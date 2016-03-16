@@ -8,7 +8,7 @@ var facebookMessages=[]
 var id=""
 
 function createDict(){
-	fi=0
+	i=0
 	for (k =0; k<posts.length; k++){
 		
 		var str1 =posts[k]["message"]
@@ -28,7 +28,6 @@ function createDict(){
 		var str2 =comments[l]["message"]
 
 		if (str2!=null){
-			console.log(str2)
 			var obj1 = {
 			 	"text":str2, "time": comments[l]["created_time"]
 			 }
@@ -85,7 +84,7 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 	        posts=posts.concat(response.data)
 	      	var i =0
-	      	while(i < 6){
+	      	while(i < 8){
             	nextpage = response.paging.next;
             	getPost(nextpage)
             	i++;

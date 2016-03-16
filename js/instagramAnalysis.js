@@ -36,7 +36,7 @@ function getUserID(){
     $.ajax({
     	type: 'GET',
     	dataType: "jsonp",
-    	url: "https://api.instagram.com/v1/users/self/media/recent/?access_token="+instagram_access_token+"&count=160",
+    	url: "https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token+"&count=300",
     	success: function(response){
     		media=media.concat(response["data"])
     		if(response["data"].length==20){
