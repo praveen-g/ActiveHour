@@ -6,7 +6,7 @@ var url=[]
 var FacebookDict=[]
 var postsDict=[]
 var commentsDict=[]
-var nextPage=[]
+
 var id=""
 
 function createCommentsDictionary(){
@@ -78,6 +78,19 @@ function formUrls(){
 	return true
 }
 
+function getPosts(){
+	var i =0
+      	while(i < 8){
+
+        	nextpage = response.paging.next;
+        	FB.api(nextpage, function(response){
+		    	posts=posts.concat(response.data);
+
+			});
+        	i++;
+		}
+		return true
+}
 
 function facebookAnalysis(){
 	console.log("here")
@@ -87,28 +100,8 @@ function facebookAnalysis(){
 		if (response && !response.error) {
 
 	        posts=posts.concat(response.data)
-	        nextPage=response.nextpage
-	     }
-
-	   //    	var i =0
-	   //    	while(i < 8){
-
-    //         	nextpage = response.paging.next;
-	// FB.api(nextpage, function(response){
- //    	posts=posts.concat(response.data);
-
-	// });
-    //         	i++;
-    // 		}
-
-		
+	        var getPages=getPosts()
+		}
 	});
-	FB.api(nextPage, function(response){
-    	posts=posts.concat(response.data);
-
-	});
-	formUrls();
-    getComments();
-    createPostsDictionary();
 
 }

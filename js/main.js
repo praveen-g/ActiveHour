@@ -28,7 +28,9 @@ function getDict(){
 }
 
 function startAnalysing(){
-    facebookAnalysis();
+
+    var variable=facebookAnalysis();
+    console.log(posts[])
     var urlCall = formUrls();
     var commentCall= getComments();
     var postCall=createPostsDictionary();
