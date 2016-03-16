@@ -4,7 +4,21 @@ var sentiment
 var grouping=[]
 
 function arrangeData(){
-  console.log("display")
+  sentimentScores.forEach(function(obj,index){
+
+    var time = obj["time"][0]+ obj["time"][1]
+
+    if(grouping[time]){
+      console.log("entereing with value")
+      grouping[time]=grouping[time].concat(obj["sentiment"])
+
+    }
+    else{
+      console.log("entering wihtout value")
+      grouping[time]=[]
+    }
+  })
+  
 }
 
 function createDict(){
@@ -13,15 +27,7 @@ function createDict(){
         console.log("loop")
         var messageScore = analyze(obj["text"])
         sentimentScores= sentimentScores.concat({"sentiment": messageScore, "time": obj["time"]})
-        var time = obj["time"][0]+ obj["time"][1]
-        if(grouping[time]){
-          console.log("entereing with value")
-          grouping[time]=grouping[time].concat(obj["sentiment"])
-        }
-        else{
-          console("entering wihtout value")
-          grouping[time]=[]
-        }
+        
     })
 
 }
