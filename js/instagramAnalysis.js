@@ -11,7 +11,7 @@ function makeCall(id){
     	url: "https://api.instagram.com/v1/users/self/media/recent/?access_token="+instagram_access_token+"&min_id="+id,
     	success: function(response2){
 
-    		if(data!= [] && iterate>0){
+    		if(response2["data"]!= [] && iterate>0){
 
     			media.concat(response2["data"])
     			if(response2["data"].length==20){
