@@ -16,7 +16,7 @@ function getDict(){
 
    mainDict=twitterDict.concat(FacebookDict);
    createDict()
-
+   
 }
 
 function startAnalysing(){
