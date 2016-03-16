@@ -21,7 +21,7 @@ function getAccessToken(){
     	success: function(response){
     		console.log(response)
     		var instagram_login_button = document.getElementById('instagramLoginButton');
-            twitter_login_button.style.display = "none";
+            instagram_login_button.style.display = "none";
     	}
 
     });
