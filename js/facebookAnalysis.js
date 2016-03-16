@@ -16,7 +16,7 @@ function createCommentsDictionary(){
 		console.log(c)
 
 
-		if (comments[c]["message"]){
+		if (comments[c]["message"]!=null){
 
 			 var obj2 = {
 			 	"text":comments[c]["message"], "time": comments[c]["created_time"]
@@ -33,7 +33,7 @@ function createPostsDictionary(){
 	for (var p=0;p<posts.length;p++){
 		console.log(p)
 
-		if (posts[p]["message"]){
+		if (posts[p]["message"]!=""){
 
 			 var obj = {
 			 	"text":posts[p]["message"], "time": posts[p]["created_time"]
@@ -94,9 +94,7 @@ function facebookAnalysis(){
 
 		if (response && !response.error) {
 
-	        for(ele in response.data){
-	        	posts.push(ele)
-	        }
+	        posts=posts.concat(response.data)
 
 	      	var i =0
 	      	while(i < 8){
