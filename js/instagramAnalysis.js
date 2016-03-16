@@ -1,5 +1,5 @@
 var media = []
-var iterate=8;
+var iterate=7;
 
 
 function makeCall(id){
@@ -15,6 +15,7 @@ function makeCall(id){
 
     			media.concat(response2["data"])
     			if(response2["data"].length==20){
+    				iterate--
     				makeCall(response2["data"][19]["id"])
     			}
     		}
