@@ -8,29 +8,28 @@ var facebookMessages=[]
 var id=""
 
 function createDict(){
-	i=0
 	for (k =0; k<posts.length; k++){
 		
 		var str1 =posts[k]["message"]
 
 		if (str1!=null){
-		console.log(i++)
+
 			 var obj = {
 			 	"text":str1, "time": posts[k]["created_time"]
 			 }
 			 facebookMessages.push(obj)
 		}
 	}
-	console.log(facebookMessages.length)
+
 
 	for (l =0; l<comments.length; l++){
-		
 		var str2 =comments[l]["message"]
 
 		if (str2!=null){
 			var obj1 = {
 			 	"text":str2, "time": comments[l]["created_time"]
 			 }
+			 console.log(obj1)
 			 facebookMessages.push(obj1)
 		}
 	}
