@@ -20,8 +20,10 @@ function getAccessToken(){
     	url: "https://api.instagram.com/v1/users/self/?access_token="+instagram_access_token,
     	success: function(response){
     		console.log(response)
-    		var instagram_login_button = document.getElementById('instagramLoginButton');
-            instagram_login_button.style.display = "none";
+            if (response && !response.error) {
+        		// var instagram_login_button = document.getElementById('instagramLoginButton');
+          //       instagram_login_button.style.display = "none";
+            }
     	}
 
     });
