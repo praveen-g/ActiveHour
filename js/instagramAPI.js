@@ -2,7 +2,7 @@ var instagram_access_token= "";
 
 function changeURL(){
 
-	document.location="https://api.instagram.com/oauth/authorize/?client_id=e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/ActiveHour/&response_type=token";
+	document.location="https://api.instagram.com/oauth/authorize/?client_id=e98ee3c6563a4c548e689fb10276e81c&redirect_uri=http://praveen-g.github.io/SentimentTracker/&response_type=token";
 };
 
 function getAccessToken(){
